@@ -1,0 +1,9 @@
+<mat-table [dataSource]="recentTransactions$ | async">
+  <ng-container matColumnDef="Hash">
+    <mat-header-cell *matHeaderCellDef>Hash</mat-header-cell>
+    <mat-cell *matCellDef="let transaction">{{ transaction.Hash }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let transaction; columns: displayedColumns" (click)="onNavigate($event, [transaction.Hash])"></mat-row>
+</mat-table>

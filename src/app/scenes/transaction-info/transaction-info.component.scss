@@ -1,0 +1,11 @@
+@import 'ui-kit';
+
+:host {
+  // Layout
+  @include zil-grid-column(start) {
+    padding: $large-gutter;
+  }
+
+  // Styling
+  @include zil-card();
+}

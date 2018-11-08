@@ -1,0 +1,59 @@
+<mat-form-field>
+  <mat-label>Block #</mat-label>
+  <input matInput value="{{ txBlock.header.BlockNum }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Transaction Hash</mat-label>
+  <input matInput value="{{ txBlock.header.TxnHash }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>DS Block #</mat-label>
+  <input matInput value="{{ txBlock.header.DSBlockNum }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Number of Transactions</mat-label>
+  <input matInput value="{{ txBlock.header.NumTxns }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Previous Block Hash</mat-label>
+  <input matInput value="{{ txBlock.header.prevBlockHash }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Number of Micro Blocks</mat-label>
+  <input matInput value="{{ txBlock.header.NumMicroBlocks }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Gas Limit</mat-label>
+  <input matInput value="{{ txBlock.header.GasLimit }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Gas Used</mat-label>
+  <input matInput value="{{ txBlock.header.GasUsed }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Miner Public Key</mat-label>
+  <input matInput value="{{ txBlock.header.MinerPubKey }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Timestamp</mat-label>
+  <input matInput value="{{ txBlock.header.Timestamp }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Type</mat-label>
+  <input matInput value="{{ txBlock.header.type }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Version</mat-label>
+  <input matInput value="{{ txBlock.header.version }}" readonly>
+</mat-form-field>

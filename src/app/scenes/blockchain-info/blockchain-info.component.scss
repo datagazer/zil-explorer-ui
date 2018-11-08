@@ -1,0 +1,6 @@
+@import 'ui-kit';
+
+:host {
+  // Layout
+  @include zil-grid-cell();
+}

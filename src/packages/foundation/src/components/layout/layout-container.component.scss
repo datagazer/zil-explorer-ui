@@ -1,0 +1,11 @@
+@import 'ui-kit';
+
+:host {
+  display: block;
+
+  max: {
+    width: $max-layout-width;
+  }
+
+  margin: 0 auto;
+}

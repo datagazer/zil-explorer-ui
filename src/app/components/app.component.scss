@@ -1,0 +1,52 @@
+@import 'ui-kit';
+
+:host {
+  display: grid;
+
+  grid: {
+    template: {
+      areas: 'header header'
+             'navbar outlet';
+
+      rows: auto 1fr;
+      columns: minmax(auto, 0.25fr) 1fr;
+    }
+  }
+
+  height: 100vh;
+
+  min: {
+    width: $min-layout-width;
+  }
+}
+
+app-header {
+  position: relative;
+  z-index: 2;
+
+  grid: {
+    area: header;
+  }
+}
+
+app-navbar {
+  position: relative;
+  z-index: 1;
+
+  grid: {
+    area: navbar;
+  }
+}
+
+app-outlet {
+  position: relative;
+  z-index: 0;
+
+  grid: {
+    area: outlet;
+  }
+
+  overflow: {
+    y: auto;
+  }
+}

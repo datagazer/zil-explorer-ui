@@ -1,0 +1,11 @@
+@mixin zil-grid-cell($column-span: $layout-grid-columns) {
+  display: grid;
+
+  grid: {
+    column: {
+      end: $column-span span;
+    }
+  }
+
+  @content;
+}

@@ -1,0 +1,14 @@
+@import './ui-kit';
+
+// Core
+@include mat-core($typography-config);
+@include mat-core-theme($theme);
+
+// Components
+@include mat-form-field-theme($theme);
+@include mat-icon-theme($theme);
+@include mat-input-theme($theme);
+@include mat-list-theme($theme);
+@include mat-progress-spinner-theme($theme);
+@include mat-table-theme($theme);
+@include mat-tabs-theme($theme);

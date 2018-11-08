@@ -1,0 +1,16 @@
+root = true
+
+[*]
+# Encoding
+charset = utf-8
+
+# Newlines
+end_of_line = lf
+insert_final_newline = true
+
+# Indentation
+indent_style = space
+indent_size = 2
+
+# Whitespaces
+trim_trailing_whitespace = true

@@ -1,0 +1,39 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template matTabLabel>DS Blocks</ng-template>
+
+    <mat-table [dataSource]="dsBlocks$ | async">
+      <ng-container matColumnDef="BlockNum">
+        <mat-header-cell *matHeaderCellDef>Block #</mat-header-cell>
+        <mat-cell *matCellDef="let block">{{ block.BlockNum }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Hash">
+        <mat-header-cell *matHeaderCellDef>Hash</mat-header-cell>
+        <mat-cell *matCellDef="let block">{{ block.Hash }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let block; columns: displayedColumns" (click)="onNavigate($event, ['ds', block.BlockNum])"></mat-row>
+    </mat-table>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template matTabLabel>TX Blocks</ng-template>
+
+    <mat-table [dataSource]="txBlocks$ | async">
+      <ng-container matColumnDef="BlockNum">
+        <mat-header-cell *matHeaderCellDef>Block #</mat-header-cell>
+        <mat-cell *matCellDef="let block">{{ block.BlockNum }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Hash">
+        <mat-header-cell *matHeaderCellDef>Hash</mat-header-cell>
+        <mat-cell *matCellDef="let block">{{ block.Hash }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let block; columns: displayedColumns" (click)="onNavigate($event, ['tx', block.BlockNum])"></mat-row>
+    </mat-table>
+  </mat-tab>
+</mat-tab-group>

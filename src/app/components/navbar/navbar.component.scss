@@ -1,0 +1,13 @@
+@import 'ui-kit';
+
+:host {
+  // Layout
+  padding: $large-gutter 0;
+
+  // Styling
+  @include mat-elevation(4);
+
+  background: {
+    color: map-get(map-get($theme, background), app-bar);
+  }
+}

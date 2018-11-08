@@ -1,0 +1,11 @@
+@mixin zil-card() {
+  @include mat-elevation(2);
+
+  border: {
+    radius: $border-radius;
+  }
+
+  background: {
+    color: map-get(map-get($theme, background), card);
+  }
+}

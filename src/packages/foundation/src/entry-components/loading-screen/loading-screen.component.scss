@@ -1,0 +1,10 @@
+@import 'ui-kit';
+
+:host {
+  // Layout
+  @include zil-grid-cell() {
+    place: {
+      self: center;
+    }
+  }
+}

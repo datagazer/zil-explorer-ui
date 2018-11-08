@@ -1,0 +1,39 @@
+<mat-form-field>
+  <mat-label>Block #</mat-label>
+  <input matInput value="{{ dsBlock.header.blockNum }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Difficulty</mat-label>
+  <input matInput value="{{ dsBlock.header.difficulty }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Leader Public Key</mat-label>
+  <input matInput value="{{ dsBlock.header.leaderPubKey }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Miner Public Key</mat-label>
+  <input matInput value="{{ dsBlock.header.minerPubKey }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Nonce</mat-label>
+  <input matInput value="{{ dsBlock.header.nonce }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Previous Hash</mat-label>
+  <input matInput value="{{ dsBlock.header.prevhash }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Timestamp</mat-label>
+  <input matInput value="{{ dsBlock.header.timestamp }}" readonly>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Signature</mat-label>
+  <input matInput value="{{ dsBlock.signature }}" readonly>
+</mat-form-field>

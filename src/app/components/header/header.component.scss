@@ -1,0 +1,15 @@
+@import 'ui-kit';
+
+:host {
+  // Layout
+  padding: $large-gutter;
+
+  // Styling
+  @include mat-elevation(6);
+
+  background: {
+    color: mat-color(map-get($theme, primary), default);
+  }
+
+  color: mat-color(map-get($theme, primary), default-contrast);
+}
