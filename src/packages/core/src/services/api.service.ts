@@ -73,7 +73,23 @@ export class ApiService {
     );
   }
 
-  private _createRequest(method: string, params?: (string | number)[]): JsonRpcRequest {
+  public getBalance(address: string): Observable<any> {
+    const request = this._createRequest('GetBalance', [address]);
+
+    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+      map(({ result }) => result)
+    );
+  }
+
+  public getSmartContractState(address: string): Observable<any> {
+    const request = this._createRequest('GetSmartContractState', [address]);
+
+    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+      map(({ result }) => result)
+    );
+  }
+
+  private _createRequest(method: string, params?: any[]): JsonRpcRequest {
     return { id: this._nextCallId++, jsonrpc: '2.0', method, params };
   }
 }

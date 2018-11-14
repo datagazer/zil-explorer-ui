@@ -1,10 +1,8 @@
 @import 'ui-kit';
 
 :host {
-  // Layout
   @include zil-grid-cell();
 
-  // Styling
   @include mat-typography-level-to-styles($typography-config, body-1);
 
   text: {

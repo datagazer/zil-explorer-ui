@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // Modules
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Services
 import { ApiService } from './services/api.service';
@@ -16,7 +17,8 @@ export const DEPENDENCIES = [
 
 export const MODULES = [
   CommonModule,
-  HttpClientModule
+  HttpClientModule,
+  FormsModule
 ];
 
 export const SERVICES = [

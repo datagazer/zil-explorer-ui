@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-ds-block-info',
-  templateUrl: './ds-block-info.component.html',
-  styleUrls: ['./ds-block-info.component.scss']
+  selector: 'app-ds-block-detail',
+  templateUrl: './ds-block-detail.component.html',
+  styleUrls: ['./ds-block-detail.component.scss']
 })
-export class DsBlockInfoComponent {
+export class DsBlockDetailComponent {
   public dsBlock: any = this.$activatedRoute.snapshot.data.dsBlock;
 
   public constructor(

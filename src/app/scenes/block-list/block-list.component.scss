@@ -1,10 +1,8 @@
 @import 'ui-kit';
 
 :host {
-  // Layout
   @include zil-grid-cell();
 
-  // Styling
   @include zil-card();
 }
 

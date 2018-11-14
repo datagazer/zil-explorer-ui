@@ -1,7 +1,6 @@
 @import 'ui-kit';
 
 :host {
-  // Layout
   @for $column-span from 1 through $layout-grid-columns {
     &[span="#{$column-span}"] {
       @include zil-grid-cell($column-span);

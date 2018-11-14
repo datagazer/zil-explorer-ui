@@ -17,6 +17,7 @@
 
   place: {
     content: $vertical-alignment stretch;
+    items: normal stretch;
   }
 
   @content;

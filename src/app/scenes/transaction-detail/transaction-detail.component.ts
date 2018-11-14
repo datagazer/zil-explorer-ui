@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-transaction-info',
-  templateUrl: './transaction-info.component.html',
-  styleUrls: ['./transaction-info.component.scss']
+  selector: 'app-transaction-detail',
+  templateUrl: './transaction-detail.component.html',
+  styleUrls: ['./transaction-detail.component.scss']
 })
-export class TransactionInfoComponent {
+export class TransactionDetailComponent {
   public transaction: any = this.$activatedRoute.snapshot.data.transaction;
 
   public constructor(

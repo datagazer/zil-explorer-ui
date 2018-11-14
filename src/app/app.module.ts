@@ -12,19 +12,25 @@ import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OutletComponent } from './components/outlet/outlet.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { TitleComponent } from './components/title/title.component';
 
 // Resolvers
+import { BalanceResolver } from './resolvers/balance.resolver';
 import { DsBlockResolver } from './resolvers/ds-block.resolver';
+import { SmartContractStateResolver } from './resolvers/smart-contract-state.resolver';
 import { TransactionResolver } from './resolvers/transaction.resolver';
 import { TxBlockResolver } from './resolvers/tx-block.resolver';
 
 // Scenes
+import { AddressInfoComponent } from './scenes/address-info/address-info.component';
 import { BlockListComponent } from './scenes/block-list/block-list.component';
 import { BlockchainInfoComponent } from './scenes/blockchain-info/blockchain-info.component';
-import { DsBlockInfoComponent } from './scenes/ds-block-info/ds-block-info.component';
-import { TransactionInfoComponent } from './scenes/transaction-info/transaction-info.component';
+import { DsBlockDetailComponent } from './scenes/ds-block-detail/ds-block-detail.component';
+import { SmartContractDetailComponent } from './scenes/smart-contract-detail/smart-contract-detail.component';
+import { TransactionDetailComponent } from './scenes/transaction-detail/transaction-detail.component';
 import { TransactionListComponent } from './scenes/transaction-list/transaction-list.component';
-import { TxBlockInfoComponent } from './scenes/tx-block-info/tx-block-info.component';
+import { TxBlockDetailComponent } from './scenes/tx-block-detail/tx-block-detail.component';
 
 export const DEPENDENCIES = [
   CoreModule,
@@ -35,22 +41,28 @@ export const COMPONENTS = [
   AppComponent,
   HeaderComponent,
   NavbarComponent,
-  OutletComponent
+  OutletComponent,
+  SearchBarComponent,
+  TitleComponent
 ];
 
 export const RESOLVERS = [
+  BalanceResolver,
   DsBlockResolver,
+  SmartContractStateResolver,
   TransactionResolver,
   TxBlockResolver
 ];
 
 export const SCENES = [
+  AddressInfoComponent,
   BlockListComponent,
   BlockchainInfoComponent,
-  DsBlockInfoComponent,
-  TransactionInfoComponent,
+  DsBlockDetailComponent,
+  SmartContractDetailComponent,
+  TransactionDetailComponent,
   TransactionListComponent,
-  TxBlockInfoComponent
+  TxBlockDetailComponent
 ];
 
 @NgModule({

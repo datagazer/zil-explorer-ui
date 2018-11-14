@@ -9,7 +9,7 @@
   <zil-layout-grid-cell span="6">
     <zil-tile>
       <zil-tile-title>Number of Known Peers</zil-tile-title>
-      <zil-tile-content>{{ 9000 | number }}</zil-tile-content>
+      <zil-tile-content>{{ (blockchainInfo$ | async)?.NumPeers | number }}</zil-tile-content>
     </zil-tile>
   </zil-layout-grid-cell>
 
