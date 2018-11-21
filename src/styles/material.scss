@@ -1,7 +1,7 @@
-@import './ui-kit';
+@import './theme';
 
 // Core
-@include mat-core($typography-config);
+@include mat-core($typography);
 @include mat-core-theme($theme);
 
 // Components

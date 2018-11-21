@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '@zilliqa/core';
 import { Observable, timer } from 'rxjs';
-import { map, share, switchMap } from 'rxjs/operators';
+import { publish, refCount, switchMap } from 'rxjs/operators';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-transaction-list',
@@ -10,28 +9,13 @@ import { map, share, switchMap } from 'rxjs/operators';
   styleUrls: ['./transaction-list.component.scss']
 })
 export class TransactionListComponent {
-  public recentTransactions$: Observable<any> = timer(0, 60000).pipe(
-    switchMap(() => this.$api.getRecentTransactions()),
-    map(({ TxnHashes }) => (TxnHashes as string[]).map((hash) => ({ Hash: hash }))),
-    share()
+  public transactions$: Observable<any> = timer(0, 60000).pipe(
+    switchMap(() => this.$transaction.list()),
+    publish(),
+    refCount()
   );
 
-  public displayedColumns: string[] = [
-    'Hash'
-  ];
-
   public constructor(
-    private readonly $activatedRoute: ActivatedRoute,
-    private readonly $router: Router,
-
-    private readonly $api: ApiService
+    private readonly $transaction: TransactionService
   ) {}
-
-  public onNavigate(event: MouseEvent, commands: any[]): void {
-    const { isCollapsed } = event.view.getSelection();
-
-    if (isCollapsed) {
-      this.$router.navigate(commands, { relativeTo: this.$activatedRoute });
-    }
-  }
 }

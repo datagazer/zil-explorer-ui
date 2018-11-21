@@ -32,6 +32,12 @@ import { TransactionDetailComponent } from './scenes/transaction-detail/transact
 import { TransactionListComponent } from './scenes/transaction-list/transaction-list.component';
 import { TxBlockDetailComponent } from './scenes/tx-block-detail/tx-block-detail.component';
 
+// Services
+import { DsBlockService } from './services/ds-block.service';
+import { MarketService } from './services/market.service';
+import { TransactionService } from './services/transaction.service';
+import { TxBlockService } from './services/tx-block.service';
+
 export const DEPENDENCIES = [
   CoreModule,
   FoundationModule
@@ -65,10 +71,17 @@ export const SCENES = [
   TxBlockDetailComponent
 ];
 
+export const SERVICES = [
+  DsBlockService,
+  MarketService,
+  TransactionService,
+  TxBlockService
+];
+
 @NgModule({
   imports: [DEPENDENCIES, AppRoutingModule],
   declarations: [COMPONENTS, SCENES],
-  providers: [RESOLVERS],
+  providers: [RESOLVERS, SERVICES],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -3,7 +3,7 @@
 :host {
   @include zil-grid-cell();
 
-  @include mat-typography-level-to-styles($typography-config, body-1);
+  @include mat-typography-level-to-styles($typography, body-1);
 
   text: {
     transform: uppercase;

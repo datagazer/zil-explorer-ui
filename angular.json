@@ -28,7 +28,7 @@
 
             "styles": [
               "./src/styles/reset.scss",
-              "./src/styles/styles.scss"
+              "./src/styles/material.scss"
             ],
 
             "stylePreprocessorOptions": {
@@ -81,6 +81,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
 
           "options": {
+            "proxyConfig": "./proxy.conf.js",
             "ssl": true
           },
 

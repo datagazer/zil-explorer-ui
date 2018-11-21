@@ -3,5 +3,5 @@
 :host {
   @include zil-grid-cell();
 
-  @include mat-typography-level-to-styles($typography-config, display-1);
+  @include mat-typography-level-to-styles($typography, display-1);
 }

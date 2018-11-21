@@ -1,6 +1,5 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
-import { ClassList } from '@zilliqa/core';
 import { LoadingService } from '@zilliqa/foundation';
 import { merge } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -11,12 +10,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @HostBinding('class')
-  public readonly classList: ClassList = new ClassList([
-    'mat-app-background',
-    'mat-typography'
-  ]);
-
   public constructor(
     private readonly $router: Router,
 

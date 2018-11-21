@@ -18,6 +18,8 @@
   min: {
     width: $min-layout-width;
   }
+
+  @include zil-base();
 }
 
 app-header {

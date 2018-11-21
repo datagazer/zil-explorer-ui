@@ -3,5 +3,11 @@
 
   "exclude": [
     "**/*.spec.ts"
-  ]
+  ],
+
+  "compilerOptions": {
+    "plugins": [
+      { "name": "@angular/language-service" }
+    ]
+  }
 }

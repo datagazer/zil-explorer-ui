@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ApiService } from '@zilliqa/core';
 import { Observable, timer } from 'rxjs';
-import { share, switchMap } from 'rxjs/operators';
+import { publish, refCount, switchMap } from 'rxjs/operators';
+import { MarketService } from '../../services/market.service';
 
 @Component({
   selector: 'app-blockchain-info',
@@ -11,10 +12,18 @@ import { share, switchMap } from 'rxjs/operators';
 export class BlockchainInfoComponent {
   public blockchainInfo$: Observable<any> = timer(0, 60000).pipe(
     switchMap(() => this.$api.getBlockchainInfo()),
-    share()
+    publish(),
+    refCount()
+  );
+
+  public marketInfo$: Observable<any> = timer(0, 60000).pipe(
+    switchMap(() => this.$market.getInfo()),
+    publish(),
+    refCount()
   );
 
   public constructor(
-    private readonly $api: ApiService
+    private readonly $api: ApiService,
+    private readonly $market: MarketService
   ) {}
 }

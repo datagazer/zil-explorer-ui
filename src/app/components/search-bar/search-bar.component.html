@@ -1,9 +1,9 @@
 <input type="search" [(ngModel)]="searchString" [matAutocomplete]="suggestions">
 
 <mat-autocomplete #suggestions>
-  <mat-option *ngIf="isAddress(searchString)" [routerLink]="['address', searchString]">Address</mat-option>
-  <mat-option *ngIf="isAddress(searchString)" [routerLink]="['smart-contracts', searchString]">Smart Contract</mat-option>
-  <mat-option *ngIf="isTransaction(searchString)" [routerLink]="['transactions', searchString]">Transaction</mat-option>
-  <mat-option *ngIf="isBlock(searchString)" [routerLink]="['blocks', 'ds', searchString]">DS Block</mat-option>
-  <mat-option *ngIf="isBlock(searchString)" [routerLink]="['blocks', 'tx', searchString]">TX Block</mat-option>
+  <mat-option *ngIf="isAddress(searchString)" [routerLink]="['/address', searchString]">Address</mat-option>
+  <mat-option *ngIf="isAddress(searchString)" [routerLink]="['/smart-contracts', searchString]">Smart Contract</mat-option>
+  <mat-option *ngIf="isTransaction(searchString)" [routerLink]="['/transactions', searchString]">Transaction</mat-option>
+  <mat-option *ngIf="isBlock(searchString)" [routerLink]="['/blocks', 'ds', searchString]">DS Block</mat-option>
+  <mat-option *ngIf="isBlock(searchString)" [routerLink]="['/blocks', 'tx', searchString]">TX Block</mat-option>
 </mat-autocomplete>

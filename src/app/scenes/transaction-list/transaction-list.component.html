@@ -1,9 +1,17 @@
-<mat-table [dataSource]="recentTransactions$ | async">
-  <ng-container matColumnDef="Hash">
-    <mat-header-cell *matHeaderCellDef>Hash</mat-header-cell>
-    <mat-cell *matCellDef="let transaction">{{ transaction.Hash }}</mat-cell>
-  </ng-container>
+<mat-list dense>
+  <mat-list-item *ngFor="let transaction of transactions$ | async">
+    <div matLine>
+      <zil-layout-row zil-align="space-between">
+        <span>TX # <zil-link [routerLink]="transaction.ID">{{ transaction.ID }}</zil-link></span>
+        <span>{{ transaction.timestamp | timeAgo }}</span>
+      </zil-layout-row>
+    </div>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let transaction; columns: displayedColumns" (click)="onNavigate($event, [transaction.Hash])"></mat-row>
-</mat-table>
+    <div matLine>
+      <zil-layout-row zil-align="space-between">
+        <span>To <zil-link [routerLink]="['/address', transaction.toAddr]">{{ transaction.toAddr }}</zil-link></span>
+        <span>Amount {{ transaction.amount | number }} ZIL</span>
+      </zil-layout-row>
+    </div>
+  </mat-list-item>
+</mat-list>

@@ -5,34 +5,21 @@
     "module": "es2015",
     "moduleResolution": "node",
 
-    "baseUrl": ".",
-
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-
-    "paths": {
-      "@zilliqa/core": ["./src/packages/core"],
-      "@zilliqa/foundation": ["./src/packages/foundation"],
-      "@zilliqa/material": ["./src/packages/material"],
-
-      "environment": ["./src/environments/environment.ts"]
-    },
-
-    "strict": true,
-
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-
     "experimentalDecorators": true,
 
-    "plugins": [
-      { "name": "@angular/language-service" }
-    ]
-  },
+    "lib": [
+      "dom",
+      "es2018"
+    ],
 
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true
+    "baseUrl": "./src/packages",
+
+    "paths": {
+      "@zilliqa/core": ["core"],
+      "@zilliqa/foundation": ["foundation"],
+      "@zilliqa/material": ["material"],
+
+      "environment": ["../environments/environment.ts"]
+    }
   }
 }

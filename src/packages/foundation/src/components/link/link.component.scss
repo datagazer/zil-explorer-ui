@@ -1,0 +1,13 @@
+@import 'ui-kit';
+
+:host {
+  display: inline;
+
+  outline: {
+    style: none;
+  }
+
+  color: mat-color(map-get($theme, primary), if(map-get($theme, isDark), lighter, darker));
+
+  cursor: pointer;
+}

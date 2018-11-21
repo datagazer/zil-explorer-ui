@@ -1,31 +1,3 @@
-@import '~@angular/material/theming';
-
-$base-palette: (
-  default: #49c1bf,
-  lighter: #81f4f2,
-  darker: #00908f,
-
-  contrast: (
-    default: $light-primary-text,
-    lighter: $dark-primary-text,
-    darker: $light-primary-text
-  )
-);
-
-$typography-config: mat-typography-config(
-  $display-4: mat-typography-level(112px, 1, 300),
-  $display-3: mat-typography-level(56px, 1, 300),
-  $display-2: mat-typography-level(45px, 1, 300),
-  $display-1: mat-typography-level(34px, 1, 300),
-  $headline: mat-typography-level(24px, 1, 300),
-  $title: mat-typography-level(20px, 1, 300)
-);
-
-$theme: mat-light-theme(
-  mat-palette($base-palette, default, lighter, darker),
-  mat-palette($base-palette, default, lighter, darker)
-);
-
 $min-layout-width: 1024px;
 $max-layout-width: 1440px;
 

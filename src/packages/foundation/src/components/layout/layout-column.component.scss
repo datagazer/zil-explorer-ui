@@ -1,5 +1,9 @@
 @import 'ui-kit';
 
 :host {
-  @include zil-grid-column(start);
+  @each $alignment in (start, space-between, end) {
+    &[zil-align="#{$alignment}"] {
+      @include zil-grid-column($alignment);
+    }
+  }
 }

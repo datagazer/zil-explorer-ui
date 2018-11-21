@@ -5,13 +5,3 @@
 
   @include zil-card();
 }
-
-.mat-column {
-  &-BlockNum {
-    flex: 0.1;
-  }
-
-  &-Hash {
-    flex: 1;
-  }
-}
