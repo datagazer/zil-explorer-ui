@@ -10,7 +10,7 @@ import { AppModule } from './app/app.module';
 
 {
   const extraProviders = [
-    { provide: API_URL, useValue: 'https://testnet-n-api.aws.zilliqa.com' }
+    { provide: API_URL, useValue: 'https://api-scilla.zilliqa.com' }
   ];
 
   if (environment.production) {

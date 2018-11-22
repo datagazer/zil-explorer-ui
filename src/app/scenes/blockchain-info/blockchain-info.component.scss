@@ -1,5 +1,5 @@
 @import 'ui-kit';
 
 :host {
-  @include zil-grid-cell();
+  @include zil-grid-column(start);
 }

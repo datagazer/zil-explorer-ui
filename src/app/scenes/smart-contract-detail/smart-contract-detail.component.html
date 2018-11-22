@@ -1,19 +1,21 @@
-<mat-table [dataSource]="smartContractState">
-  <ng-container matColumnDef="type">
-    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.type }}</mat-cell>
-  </ng-container>
-
+<mat-table [dataSource]="smartContract">
   <ng-container matColumnDef="vname">
     <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.vname }}</mat-cell>
+    <mat-cell *matCellDef="let smartContract">{{ smartContract.vname }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+    <mat-cell *matCellDef="let smartContract">{{ smartContract.type }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="value">
     <mat-header-cell *matHeaderCellDef>Value</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{ row.value }}</mat-cell>
+    <mat-cell *matCellDef="let smartContract">{{ smartContract.value }}</mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  <mat-header-row *matHeaderRowDef="smartContractColumns"></mat-header-row>
+  <mat-row *matRowDef="let smartContract; columns: smartContractColumns"></mat-row>
 </mat-table>
+
+<pre>{{ smartContractCode.code }}</pre>

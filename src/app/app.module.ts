@@ -18,6 +18,8 @@ import { TitleComponent } from './components/title/title.component';
 // Resolvers
 import { BalanceResolver } from './resolvers/balance.resolver';
 import { DsBlockResolver } from './resolvers/ds-block.resolver';
+import { SmartContractCodeResolver } from './resolvers/smart-contract-code.resolver';
+import { SmartContractInitResolver } from './resolvers/smart-contract-init.resolver';
 import { SmartContractStateResolver } from './resolvers/smart-contract-state.resolver';
 import { TransactionResolver } from './resolvers/transaction.resolver';
 import { TxBlockResolver } from './resolvers/tx-block.resolver';
@@ -55,6 +57,8 @@ export const COMPONENTS = [
 export const RESOLVERS = [
   BalanceResolver,
   DsBlockResolver,
+  SmartContractCodeResolver,
+  SmartContractInitResolver,
   SmartContractStateResolver,
   TransactionResolver,
   TxBlockResolver

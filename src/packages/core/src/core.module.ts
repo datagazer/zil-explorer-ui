@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 // Services
-import { ApiService } from './services/api.service';
+import { ZilliqaService } from './services/zilliqa.service';
 
 export const DEPENDENCIES = [
   BrowserModule
@@ -22,7 +22,7 @@ export const MODULES = [
 ];
 
 export const SERVICES = [
-  ApiService
+  ZilliqaService
 ];
 
 @NgModule({

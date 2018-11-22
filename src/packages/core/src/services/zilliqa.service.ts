@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 export const API_URL = new InjectionToken<string>('API_URL');
 
 @Injectable()
-export class ApiService {
+export class ZilliqaService {
   private _nextCallId: number = 1;
 
   public constructor(
@@ -19,22 +19,6 @@ export class ApiService {
 
   public getBlockchainInfo(): Observable<any> {
     const request = this._createRequest('GetBlockchainInfo');
-
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
-      map(({ result }) => result)
-    );
-  }
-
-  public getDsBlocks(page: number = 1): Observable<any> {
-    const request = this._createRequest('DSBlockListing', [page]);
-
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
-      map(({ result }) => result)
-    );
-  }
-
-  public getTxBlocks(page: number = 1): Observable<any> {
-    const request = this._createRequest('TxBlockListing', [page]);
 
     return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
       map(({ result }) => result)
@@ -57,14 +41,6 @@ export class ApiService {
     );
   }
 
-  public getRecentTransactions(): Observable<any> {
-    const request = this._createRequest('GetRecentTransactions');
-
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
-      map(({ result }) => result)
-    );
-  }
-
   public getTransaction(id: string): Observable<any> {
     const request = this._createRequest('GetTransaction', [id]);
 
@@ -81,8 +57,24 @@ export class ApiService {
     );
   }
 
+  public getSmartContractInit(address: string): Observable<any> {
+    const request = this._createRequest('GetSmartContractInit', [address]);
+
+    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+      map(({ result }) => result)
+    );
+  }
+
   public getSmartContractState(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContractState', [address]);
+
+    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+      map(({ result }) => result)
+    );
+  }
+
+  public getSmartContractCode(address: string): Observable<any> {
+    const request = this._createRequest('GetSmartContractCode', [address]);
 
     return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
       map(({ result }) => result)

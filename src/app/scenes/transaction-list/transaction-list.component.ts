@@ -15,6 +15,14 @@ export class TransactionListComponent {
     refCount()
   );
 
+  public transactionColumns: string[] = [
+    'id',
+    'timestamp',
+    'addressFrom',
+    'addressTo',
+    'value'
+  ];
+
   public constructor(
     private readonly $transaction: TransactionService
   ) {}

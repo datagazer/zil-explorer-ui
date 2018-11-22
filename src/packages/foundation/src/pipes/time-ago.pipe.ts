@@ -8,10 +8,10 @@ export class TimeAgoPipe implements PipeTransform {
 
   /** @implements PipeTransform */
   public transform(value: any): string {
-    let diff = (this._currentDate.getTime() - new Date(value).getTime()) / 1000;
+    let diff = this._currentDate.getTime() - new Date(value).getTime();
 
     switch (true) {
-      case diff < 60: {
+      case (diff /= 1000) < 60: {
         return `${Math.floor(diff)} second(s) ago`;
       }
 

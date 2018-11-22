@@ -30,14 +30,14 @@
   <zil-layout-grid-cell zil-span="6">
     <zil-tile>
       <zil-tile-title>ZIL Total Market Cap</zil-tile-title>
-      <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
+      <zil-tile-content>{{ (marketInfo$ | async)?.capitalization }}</zil-tile-content>
     </zil-tile>
   </zil-layout-grid-cell>
 
   <zil-layout-grid-cell zil-span="6">
     <zil-tile>
       <zil-tile-title>ZIL Total Outstanding</zil-tile-title>
-      <zil-tile-content>{{ (marketInfo$ | async)?.capitalization }}</zil-tile-content>
+      <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
     </zil-tile>
   </zil-layout-grid-cell>
 

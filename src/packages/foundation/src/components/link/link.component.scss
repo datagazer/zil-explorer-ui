@@ -1,13 +1,23 @@
 @import 'ui-kit';
 
 :host {
-  display: inline;
+  display: inline-block;
 
-  outline: {
-    style: none;
+  max: {
+    width: 120px;
+  }
+
+  overflow: hidden;
+
+  text: {
+    overflow: ellipsis;
   }
 
   color: mat-color(map-get($theme, primary), if(map-get($theme, isDark), lighter, darker));
 
   cursor: pointer;
+
+  &:focus {
+    outline: initial;
+  }
 }

@@ -7,15 +7,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./smart-contract-detail.component.scss']
 })
 export class SmartContractDetailComponent {
-  public smartContractState: any[] = this.$activatedRoute.snapshot.data.smartContractState;
+  public smartContract: any[] = [
+    ...this.$activatedRoute.snapshot.data.smartContractInit,
+    ...this.$activatedRoute.snapshot.data.smartContractState
+  ];
 
-  public displayedColumns: string[] = [
-    'type',
+  public smartContractCode: any = this.$activatedRoute.snapshot.data.smartContractCode;
+
+  public smartContractColumns: string[] = [
     'vname',
+    'type',
     'value'
   ];
 
   public constructor(
     private readonly $activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    console.log(this);
+  }
 }

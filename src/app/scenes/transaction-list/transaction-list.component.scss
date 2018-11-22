@@ -1,7 +1,51 @@
 @import 'ui-kit';
 
 :host {
-  @include zil-grid-cell();
+  @include zil-grid-column(start);
 
   @include zil-card();
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: ($small-gutter / 2);
+
+  line: {
+    height: 1;
+  }
+}
+
+.mat-column {
+  &-id {
+    text: {
+      align: left;
+    }
+  }
+
+  &-timestamp {
+    text: {
+      align: left;
+    }
+  }
+
+  &-addressFrom {
+    text: {
+      align: left;
+    }
+  }
+
+  &-addressTo {
+    text: {
+      align: left;
+    }
+  }
+
+  &-value {
+    text: {
+      align: right;
+    }
+  }
 }

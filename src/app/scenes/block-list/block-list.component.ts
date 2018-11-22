@@ -10,17 +10,33 @@ import { TxBlockService } from '../../services/tx-block.service';
   styleUrls: ['./block-list.component.scss']
 })
 export class BlockListComponent {
+  public txBlocks$: Observable<any> = timer(0, 60000).pipe(
+    switchMap(() => this.$txBlock.list()),
+    publish(),
+    refCount()
+  );
+
   public dsBlocks$: Observable<any> = timer(0, 60000).pipe(
     switchMap(() => this.$dsBlock.list()),
     publish(),
     refCount()
   );
 
-  public txBlocks$: Observable<any> = timer(0, 60000).pipe(
-    switchMap(() => this.$txBlock.list()),
-    publish(),
-    refCount()
-  );
+  public txBlockColumns: string[] = [
+    'id',
+    'timestamp',
+    'txCount',
+    'miner',
+    'reward',
+    'dsBlockId'
+  ];
+
+  public dsBlockColumns: string[] = [
+    'id',
+    'timestamp',
+    'miner',
+    'difficulty'
+  ];
 
   public constructor(
     private readonly $dsBlock: DsBlockService,
