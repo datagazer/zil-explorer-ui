@@ -11,13 +11,13 @@ import { TxBlockService } from '../../services/tx-block.service';
 })
 export class BlockListComponent {
   public txBlocks$: Observable<any> = timer(0, 60000).pipe(
-    switchMap(() => this.$txBlock.list()),
+    switchMap(() => this.$txBlock.getTxBlocks()),
     publish(),
     refCount()
   );
 
   public dsBlocks$: Observable<any> = timer(0, 60000).pipe(
-    switchMap(() => this.$dsBlock.list()),
+    switchMap(() => this.$dsBlock.getDsBlocks()),
     publish(),
     refCount()
   );

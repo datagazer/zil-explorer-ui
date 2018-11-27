@@ -14,16 +14,6 @@
 </mat-form-field>
 
 <mat-form-field>
-  <mat-label>Miner Public Key</mat-label>
-  <input matInput value="{{ dsBlock.header.minerPubKey }}" readonly>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Nonce</mat-label>
-  <input matInput value="{{ dsBlock.header.nonce }}" readonly>
-</mat-form-field>
-
-<mat-form-field>
   <mat-label>Previous Hash</mat-label>
   <input matInput value="{{ dsBlock.header.prevhash }}" readonly>
 </mat-form-field>
@@ -37,3 +27,59 @@
   <mat-label>Signature</mat-label>
   <input matInput value="{{ dsBlock.signature }}" readonly>
 </mat-form-field>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>TX Blocks</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <table mat-table [dataSource]="txBlocks">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+
+      <td mat-cell *matCellDef="let txBlock">
+        <zil-link [routerLink]="['tx', txBlock.id]">{{ txBlock.id }}</zil-link>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef>Age</th>
+
+      <td mat-cell *matCellDef="let txBlock">
+        {{ txBlock.timestamp | timeAgo }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="txCount">
+      <th mat-header-cell *matHeaderCellDef>Transactions</th>
+
+      <td mat-cell *matCellDef="let txBlock">
+        {{ txBlock.txCount | number }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="miner">
+      <th mat-header-cell *matHeaderCellDef>Miner</th>
+
+      <td mat-cell *matCellDef="let txBlock">
+        <zil-link [routerLink]="['/address', txBlock.miner]">{{ txBlock.miner }}</zil-link>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reward">
+      <th mat-header-cell *matHeaderCellDef>Reward</th>
+
+      <td mat-cell *matCellDef="let txBlock">
+        {{ txBlock.reward | currency : 'ZIL' }}
+      </td>
+    </ng-container>
+
+    <thead>
+      <tr mat-header-row *matHeaderRowDef="txBlockColumns"></tr>
+    </thead>
+
+    <tbody>
+      <tr mat-row *matRowDef="let txBlock; columns: txBlockColumns"></tr>
+    </tbody>
+  </table>
+</mat-expansion-panel>

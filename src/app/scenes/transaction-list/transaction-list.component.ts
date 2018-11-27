@@ -10,7 +10,7 @@ import { TransactionService } from '../../services/transaction.service';
 })
 export class TransactionListComponent {
   public transactions$: Observable<any> = timer(0, 60000).pipe(
-    switchMap(() => this.$transaction.list()),
+    switchMap(() => this.$transaction.getTransactions()),
     publish(),
     refCount()
   );

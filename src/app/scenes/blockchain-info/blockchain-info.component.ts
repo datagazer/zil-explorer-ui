@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ZilliqaService } from '@zilliqa/core';
 import { Observable, timer } from 'rxjs';
-import { publish, refCount, switchMap } from 'rxjs/operators';
+import { map, publish, refCount, switchMap } from 'rxjs/operators';
 import { MarketService } from '../../services/market.service';
 
 @Component({
@@ -18,6 +18,39 @@ export class BlockchainInfoComponent {
 
   public marketInfo$: Observable<any> = timer(0, 60000).pipe(
     switchMap(() => this.$market.getInfo()),
+    publish(),
+    refCount()
+  );
+
+  public marketCharts$: Observable<any> = timer(0, 60000).pipe(
+    switchMap(() => this.$market.getCharts()),
+
+    map((items) => ({
+      transactionRate: [
+        [
+          'Date',
+          'Transaction Rate'
+        ],
+
+        ...items.map((item) => [
+          item.dayAdded,
+          item.transactionRate
+        ])
+      ],
+
+      zilPrice: [
+        [
+          'Date',
+          'ZIL USD Price'
+        ],
+
+        ...items.map((item) => [
+          item.dayAdded,
+          item.zilPrice
+        ])
+      ]
+    })),
+
     publish(),
     refCount()
   );

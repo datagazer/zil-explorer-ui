@@ -22,7 +22,5 @@ export class SmartContractDetailComponent {
 
   public constructor(
     private readonly $activatedRoute: ActivatedRoute
-  ) {
-    console.log(this);
-  }
+  ) {}
 }

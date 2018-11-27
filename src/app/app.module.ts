@@ -21,8 +21,10 @@ import { DsBlockResolver } from './resolvers/ds-block.resolver';
 import { SmartContractCodeResolver } from './resolvers/smart-contract-code.resolver';
 import { SmartContractInitResolver } from './resolvers/smart-contract-init.resolver';
 import { SmartContractStateResolver } from './resolvers/smart-contract-state.resolver';
+import { SmartContractsResolver } from './resolvers/smart-contracts.resolver';
 import { TransactionResolver } from './resolvers/transaction.resolver';
 import { TxBlockResolver } from './resolvers/tx-block.resolver';
+import { TxBlocksResolver } from './resolvers/tx-blocks.resolver';
 
 // Scenes
 import { AddressInfoComponent } from './scenes/address-info/address-info.component';
@@ -60,8 +62,10 @@ export const RESOLVERS = [
   SmartContractCodeResolver,
   SmartContractInitResolver,
   SmartContractStateResolver,
+  SmartContractsResolver,
   TransactionResolver,
-  TxBlockResolver
+  TxBlockResolver,
+  TxBlocksResolver
 ];
 
 export const SCENES = [

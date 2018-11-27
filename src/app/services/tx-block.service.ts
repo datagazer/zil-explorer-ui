@@ -10,7 +10,7 @@ export class TxBlockService {
     private readonly $httpClient: HttpClient
   ) {}
 
-  public list(): Observable<any[]> {
+  public getTxBlocks(): Observable<any[]> {
     return this.$httpClient.get<any[]>('/v1/txblocks').pipe(
       map((items) => items.map((item) => ({
         id: Number(item.BlockNum),

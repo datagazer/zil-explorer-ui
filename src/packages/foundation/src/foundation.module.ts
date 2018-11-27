@@ -18,6 +18,9 @@ import { TileContentComponent } from './components/tile/tile-content.component';
 import { TileTitleComponent } from './components/tile/tile-title.component';
 import { TileComponent } from './components/tile/tile.component';
 
+// Directives
+import { LineChartDirective } from './directives/line-chart.directive';
+
 // Entry Components
 import { LoadingScreenComponent } from './entry-components/loading-screen/loading-screen.component';
 import { OverlayContainerComponent } from './entry-components/overlay-container/overlay-container.component';
@@ -50,6 +53,10 @@ export const COMPONENTS = [
   TileComponent
 ];
 
+export const DIRECTIVES = [
+  LineChartDirective
+];
+
 export const ENTRY_COMPONENTS = [
   LoadingScreenComponent,
   OverlayContainerComponent
@@ -66,8 +73,8 @@ export const SERVICES = [
 
 @NgModule({
   imports: [DEPENDENCIES, MODULES],
-  exports: [MODULES, COMPONENTS, ENTRY_COMPONENTS, PIPES],
-  declarations: [COMPONENTS, ENTRY_COMPONENTS, PIPES],
+  exports: [MODULES, COMPONENTS, DIRECTIVES, ENTRY_COMPONENTS, PIPES],
+  declarations: [COMPONENTS, DIRECTIVES, ENTRY_COMPONENTS, PIPES],
   entryComponents: [ENTRY_COMPONENTS],
   providers: [SERVICES]
 })

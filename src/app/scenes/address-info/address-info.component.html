@@ -12,3 +12,36 @@
   <mat-label>Nonce</mat-label>
   <input matInput value="{{ balance.nonce }}" readonly>
 </mat-form-field>
+
+<mat-accordion *ngIf="smartContracts">
+  <mat-expansion-panel *ngFor="let smartContract of smartContracts">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ smartContract.address }}</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <table mat-table [dataSource]="smartContract.state">
+      <ng-container matColumnDef="vname">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let smartContract">{{ smartContract.vname }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let smartContract">{{ smartContract.type }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Value</th>
+        <td mat-cell *matCellDef="let smartContract">{{ smartContract.value }}</td>
+      </ng-container>
+
+      <thead>
+        <tr mat-header-row *matHeaderRowDef="smartContractColumns"></tr>
+      </thead>
+
+      <tbody>
+        <tr mat-row *matRowDef="let smartContract; columns: smartContractColumns"></tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>

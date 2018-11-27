@@ -9,13 +9,17 @@ import { environment } from 'environment';
 import { AppModule } from './app/app.module';
 
 {
-  const extraProviders = [
-    { provide: API_URL, useValue: 'https://api-scilla.zilliqa.com' }
-  ];
+  google.charts.load('current', { packages: ['line'] });
 
-  if (environment.production) {
-    enableProdMode();
-  }
+  google.charts.setOnLoadCallback(() => {
+    const extraProviders = [
+      { provide: API_URL, useValue: 'https://api-scilla.zilliqa.com' }
+    ];
 
-  platformBrowserDynamic(extraProviders).bootstrapModule(AppModule);
+    if (environment.production) {
+      enableProdMode();
+    }
+
+    platformBrowserDynamic(extraProviders).bootstrapModule(AppModule);
+  });
 }

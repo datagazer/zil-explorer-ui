@@ -10,7 +10,7 @@ export class TransactionService {
     private readonly $httpClient: HttpClient
   ) {}
 
-  public list(): Observable<any[]> {
+  public getTransactions(): Observable<any[]> {
     return this.$httpClient.get<any[]>('/v1/transactions').pipe(
       map((items) => items.map((item) => ({
         id: item.ID,

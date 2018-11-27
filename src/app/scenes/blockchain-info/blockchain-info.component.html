@@ -1,6 +1,20 @@
 <zil-layout-grid>
   <zil-layout-grid-cell zil-span="6">
     <zil-tile>
+      <zil-tile-title>Transaction Rate Trend</zil-tile-title>
+      <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.transactionRate"></zil-tile-content>
+    </zil-tile>
+  </zil-layout-grid-cell>
+
+  <zil-layout-grid-cell zil-span="6">
+    <zil-tile>
+      <zil-tile-title>ZIL USD Price Trend</zil-tile-title>
+      <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
+    </zil-tile>
+  </zil-layout-grid-cell>
+
+  <zil-layout-grid-cell zil-span="6">
+    <zil-tile>
       <zil-tile-title>Transaction Rate</zil-tile-title>
       <zil-tile-content>580 / 3800</zil-tile-content>
     </zil-tile>

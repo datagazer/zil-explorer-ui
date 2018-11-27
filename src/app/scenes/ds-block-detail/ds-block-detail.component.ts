@@ -8,6 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DsBlockDetailComponent {
   public dsBlock: any = this.$activatedRoute.snapshot.data.dsBlock;
+  public txBlocks: any[] = this.$activatedRoute.snapshot.data.txBlocks;
+
+  public txBlockColumns: string[] = [
+    'id',
+    'timestamp',
+    'txCount',
+    'miner',
+    'reward'
+  ];
 
   public constructor(
     private readonly $activatedRoute: ActivatedRoute

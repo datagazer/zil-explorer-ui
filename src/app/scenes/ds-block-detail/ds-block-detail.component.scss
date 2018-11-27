@@ -7,3 +7,47 @@
 
   @include zil-card();
 }
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: ($small-gutter / 2);
+
+  line: {
+    height: 1;
+  }
+}
+
+.mat-column {
+  &-id {
+    text: {
+      align: left;
+    }
+  }
+
+  &-timestamp {
+    text: {
+      align: left;
+    }
+  }
+
+  &-txCount {
+    text: {
+      align: right;
+    }
+  }
+
+  &-miner {
+    text: {
+      align: left;
+    }
+  }
+
+  &-reward {
+    text: {
+      align: right;
+    }
+  }
+}

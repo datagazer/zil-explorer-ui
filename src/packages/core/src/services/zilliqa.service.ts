@@ -57,6 +57,14 @@ export class ZilliqaService {
     );
   }
 
+  public getSmartContracts(address: string): Observable<any> {
+    const request = this._createRequest('GetSmartContracts', [address]);
+
+    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+      map(({ result }) => result)
+    );
+  }
+
   public getSmartContractInit(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContractInit', [address]);
 
