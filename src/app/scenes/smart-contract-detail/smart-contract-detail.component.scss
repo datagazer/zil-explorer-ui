@@ -6,6 +6,10 @@
   @include zil-card();
 }
 
-pre {
-  padding: 0 $large-gutter;
+ace-editor {
+  min: {
+    height: 60vh;
+  }
+
+  overflow: auto;
 }

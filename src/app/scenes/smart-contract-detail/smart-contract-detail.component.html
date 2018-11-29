@@ -18,4 +18,4 @@
   <mat-row *matRowDef="let smartContract; columns: smartContractColumns"></mat-row>
 </mat-table>
 
-<pre>{{ smartContractCode.code }}</pre>
+<ace-editor [text]="smartContractCode.code" mode="ocaml" readOnly="true"></ace-editor>

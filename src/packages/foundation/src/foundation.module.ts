@@ -6,6 +6,7 @@ import { PortalModule } from '@angular/cdk/portal';
 
 // Modules
 import { MaterialModule } from '@zilliqa/material';
+import { AceEditorModule } from 'ng2-ace-editor';
 
 // Components
 import { LayoutColumnComponent } from './components/layout/layout-column.component';
@@ -38,7 +39,8 @@ export const DEPENDENCIES = [
 ];
 
 export const MODULES = [
-  MaterialModule
+  MaterialModule,
+  AceEditorModule
 ];
 
 export const COMPONENTS = [

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import 'brace/mode/ocaml';
+
 @Component({
   selector: 'app-smart-contract-detail',
   templateUrl: './smart-contract-detail.component.html',
