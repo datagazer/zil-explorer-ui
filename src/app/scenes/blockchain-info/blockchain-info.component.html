@@ -58,7 +58,7 @@
   <zil-layout-grid-cell zil-span="6">
     <zil-tile>
       <zil-tile-title>Mining Difficulty</zil-tile-title>
-      <zil-tile-content>{{ 100500 | number }}</zil-tile-content>
+      <zil-tile-content>{{ (marketInfo$ | async)?.miningDifficulty | number }}</zil-tile-content>
     </zil-tile>
   </zil-layout-grid-cell>
 

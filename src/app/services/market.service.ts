@@ -10,7 +10,7 @@ export class MarketService {
   ) {}
 
   public getInfo(): Observable<any> {
-    return this.$httpClient.get<any>('/v1/zilprice');
+    return this.$httpClient.get<any>('/v1/mainpage');
   }
 
   public getCharts(): Observable<any[]> {
