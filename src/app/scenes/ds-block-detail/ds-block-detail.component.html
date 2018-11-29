@@ -38,7 +38,7 @@
       <th mat-header-cell *matHeaderCellDef>#</th>
 
       <td mat-cell *matCellDef="let txBlock">
-        <zil-link [routerLink]="['tx', txBlock.id]">{{ txBlock.id }}</zil-link>
+        <zil-link [routerLink]="['/blocks/tx', txBlock.id]">{{ txBlock.id }}</zil-link>
       </td>
     </ng-container>
 
