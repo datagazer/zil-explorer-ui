@@ -26,15 +26,15 @@ export class BlockchainInfoComponent {
     switchMap(() => this.$market.getCharts()),
 
     map((items) => ({
-      transactionRate: [
+      transactionNum: [
         [
           'Date',
-          'Transaction Rate'
+          'Transaction #'
         ],
 
         ...items.map((item) => [
           item.dayAdded,
-          item.transactionRate
+          item.transactionNum
         ])
       ],
 

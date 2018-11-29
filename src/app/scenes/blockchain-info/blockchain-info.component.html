@@ -1,8 +1,8 @@
 <zil-layout-grid>
   <zil-layout-grid-cell zil-span="6">
     <zil-tile>
-      <zil-tile-title>Transaction Rate Trend</zil-tile-title>
-      <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.transactionRate"></zil-tile-content>
+      <zil-tile-title>Transaction # Trend</zil-tile-title>
+      <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.transactionNum"></zil-tile-content>
     </zil-tile>
   </zil-layout-grid-cell>
 

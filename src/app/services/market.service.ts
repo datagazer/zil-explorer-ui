@@ -17,7 +17,7 @@ export class MarketService {
     return this.$httpClient.get<any[]>('/v1/charts').pipe(
       map((items) => items.map((item) => ({
         dayAdded: new Date(item.dayAdded),
-        transactionRate: item.transactionRate,
+        transactionNum: item.transactionNum,
         zilPrice: item.zilPrice
       })))
     );
