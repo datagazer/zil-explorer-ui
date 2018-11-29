@@ -45,8 +45,8 @@ RUN echo  '\n\
     default 1; \n\
   } \n\
   server { \n\
-          set \$backend_port  8888; \n\
-          set \$backend applications-some.url:\$backend_port; \n\
+          set \$backend_port  8080; \n\
+          set \$backend 172.17.0.1:\$backend_port; \n\
           listen  443 ssl; \n\
           server_name _; \n\
           proxy_connect_timeout  30s; \n\
@@ -74,6 +74,13 @@ RUN echo  '\n\
               expires 0; \n\
               try_files /index.html =404; \n\
           } \n\
+	location /v1/ { \n\
+                rewrite ^/v1/(.*)\$ /\$1 break; \n\
+                proxy_pass http://\$backend; \n\
+                proxy_set_header Host        \$host;  \n\
+                proxy_set_header X-Real-IP \$remote_addr; \n\
+                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for; \n\ 
+         }\n\
   } \n\
   \n '\
   > /etc/nginx/conf.d/web.conf
