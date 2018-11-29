@@ -3,3 +3,15 @@
 :host {
   @include zil-grid-row(start);
 }
+
+input {
+  width: 500px;
+
+  padding: ($large-gutter / 4);
+
+  border: 1px solid mat-color(map-get($theme, background), app-bar) {
+    radius: (2 * $border-radius);
+  }
+
+  @include mat-typography-level-to-styles($typography, subheading-2);
+}

@@ -1,4 +1,4 @@
-<input type="search" [(ngModel)]="searchString" [matAutocomplete]="suggestions">
+<input type="search" [(ngModel)]="searchString" [matAutocomplete]="suggestions" placeholder="Search by Address / Smart Contract / Transaction / Block">
 
 <mat-autocomplete #suggestions>
   <mat-option *ngIf="isAddress(searchString)" [routerLink]="['/address', searchString]">Address</mat-option>
