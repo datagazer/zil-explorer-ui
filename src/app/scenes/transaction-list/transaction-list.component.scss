@@ -6,18 +6,6 @@
   @include zil-card();
 }
 
-.mat-table {
-  width: 100%;
-}
-
-.mat-header-cell, .mat-cell {
-  padding: ($small-gutter / 2);
-
-  line: {
-    height: 1;
-  }
-}
-
 .mat-column {
   &-id {
     text: {

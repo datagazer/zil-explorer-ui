@@ -1,3 +1,5 @@
+@import 'ui-kit';
+
 body {
   margin: initial;
 }
@@ -9,7 +11,17 @@ body {
 }
 
 .mat-table {
+  width: 100%;
+
   background: {
     color: initial !important;
+  }
+}
+
+.mat-header-cell, .mat-cell {
+  padding: ($small-gutter / 2);
+
+  line: {
+    height: 1;
   }
 }
