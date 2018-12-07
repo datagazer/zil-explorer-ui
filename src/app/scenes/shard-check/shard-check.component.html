@@ -1,0 +1,25 @@
+<form #ngForm="ngForm">
+  <zil-card>
+    <zil-card-content>
+      <mat-form-field>
+        <mat-label>Wallet</mat-label>
+        <input matInput [(ngModel)]="wallet" name="wallet" minlength="40" maxlength="40" required>
+        <mat-error *ngIf="ngForm.form.get('wallet')?.errors">Invalid address</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Smart Contract</mat-label>
+        <input matInput [(ngModel)]="smartContract" name="smartContract" minlength="40" maxlength="40" required>
+        <mat-error *ngIf="ngForm.form.get('smartContract')?.errors">Invalid address</mat-error>
+      </mat-form-field>
+
+      <ng-container *ngIf="result !== null">
+        <dg-row alignment="center">
+          {{ result ? 'Address and Smart Contract are in the same shard' : 'Address and Smart Contract are in different shards' }}
+        </dg-row>
+      </ng-container>
+
+      <button mat-raised-button type="button" color="primary" (click)="onCheck()" [disabled]="ngForm.invalid">Check</button>
+    </zil-card-content>
+  </zil-card>
+</form>

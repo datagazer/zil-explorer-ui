@@ -20,7 +20,9 @@
 <mat-accordion *ngIf="smartContracts">
   <mat-expansion-panel *ngFor="let smartContract of smartContracts">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{ smartContract.address }}</mat-panel-title>
+      <mat-panel-title>
+        <zil-link [routerLink]="['/smart-contracts', smartContract.address]">{{ smartContract.address }}</zil-link>
+      </mat-panel-title>
     </mat-expansion-panel-header>
 
     <table mat-table [dataSource]="smartContract.state">

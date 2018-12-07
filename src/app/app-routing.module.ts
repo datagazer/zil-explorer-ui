@@ -17,6 +17,7 @@ import { AddressInfoComponent } from './scenes/address-info/address-info.compone
 import { BlockListComponent } from './scenes/block-list/block-list.component';
 import { BlockchainInfoComponent } from './scenes/blockchain-info/blockchain-info.component';
 import { DsBlockDetailComponent } from './scenes/ds-block-detail/ds-block-detail.component';
+import { ShardCheckComponent } from './scenes/shard-check/shard-check.component';
 import { SmartContractDetailComponent } from './scenes/smart-contract-detail/smart-contract-detail.component';
 import { TransactionDetailComponent } from './scenes/transaction-detail/transaction-detail.component';
 import { TransactionListComponent } from './scenes/transaction-list/transaction-list.component';
@@ -74,6 +75,17 @@ export const ROUTES = RouterModule.forRoot([
         resolve: {
           transaction: TransactionResolver
         }
+      }
+    ]
+  },
+
+  {
+    path: 'shard-check',
+
+    children: [
+      {
+        path: '',
+        component: ShardCheckComponent
       }
     ]
   },
