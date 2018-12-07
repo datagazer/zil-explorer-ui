@@ -1,4 +1,4 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 body {
   margin: initial;
@@ -19,7 +19,7 @@ body {
 }
 
 .mat-header-cell, .mat-cell {
-  padding: ($small-gutter / 2);
+  padding: map-get($default-gutter, small) !important;
 
   line: {
     height: 1;

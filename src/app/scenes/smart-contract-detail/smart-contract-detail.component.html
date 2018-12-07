@@ -1,21 +1,29 @@
-<mat-table [dataSource]="smartContract">
-  <ng-container matColumnDef="vname">
-    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-    <mat-cell *matCellDef="let smartContract">{{ smartContract.vname }}</mat-cell>
-  </ng-container>
+<zil-card>
+  <zil-card-content>
+    <mat-table [dataSource]="smartContract">
+      <ng-container matColumnDef="vname">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let smartContract">{{ smartContract.vname }}</mat-cell>
+      </ng-container>
 
-  <ng-container matColumnDef="type">
-    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
-    <mat-cell *matCellDef="let smartContract">{{ smartContract.type }}</mat-cell>
-  </ng-container>
+      <ng-container matColumnDef="type">
+        <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+        <mat-cell *matCellDef="let smartContract">{{ smartContract.type }}</mat-cell>
+      </ng-container>
 
-  <ng-container matColumnDef="value">
-    <mat-header-cell *matHeaderCellDef>Value</mat-header-cell>
-    <mat-cell *matCellDef="let smartContract">{{ smartContract.value }}</mat-cell>
-  </ng-container>
+      <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef>Value</mat-header-cell>
+        <mat-cell *matCellDef="let smartContract">{{ smartContract.value }}</mat-cell>
+      </ng-container>
 
-  <mat-header-row *matHeaderRowDef="smartContractColumns"></mat-header-row>
-  <mat-row *matRowDef="let smartContract; columns: smartContractColumns"></mat-row>
-</mat-table>
+      <mat-header-row *matHeaderRowDef="smartContractColumns"></mat-header-row>
+      <mat-row *matRowDef="let smartContract; columns: smartContractColumns"></mat-row>
+    </mat-table>
+  </zil-card-content>
+</zil-card>
 
-<ace-editor [text]="smartContractCode.code" mode="ocaml" readOnly="true"></ace-editor>
+<zil-card no-padding>
+  <zil-card-content>
+    <ace-editor [text]="smartContractCode.code" mode="scilla" theme="tomorrow" readOnly="true"></ace-editor>
+  </zil-card-content>
+</zil-card>

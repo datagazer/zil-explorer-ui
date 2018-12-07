@@ -5,15 +5,15 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 
 // Modules
+import { LayoutModule } from '@datagazer/layout';
+import { TypographyModule } from '@datagazer/typography';
 import { MaterialModule } from '@zilliqa/material';
 import { AceEditorModule } from 'ng2-ace-editor';
 
 // Components
-import { LayoutColumnComponent } from './components/layout/layout-column.component';
-import { LayoutContainerComponent } from './components/layout/layout-container.component';
-import { LayoutGridCellComponent } from './components/layout/layout-grid-cell.component';
-import { LayoutGridComponent } from './components/layout/layout-grid.component';
-import { LayoutRowComponent } from './components/layout/layout-row.component';
+import { CardContentComponent } from './components/card/card-content.component';
+import { CardTitleComponent } from './components/card/card-title.component';
+import { CardComponent } from './components/card/card.component';
 import { LinkComponent } from './components/link/link.component';
 import { TileContentComponent } from './components/tile/tile-content.component';
 import { TileTitleComponent } from './components/tile/tile-title.component';
@@ -39,16 +39,16 @@ export const DEPENDENCIES = [
 ];
 
 export const MODULES = [
+  LayoutModule,
+  TypographyModule,
   MaterialModule,
   AceEditorModule
 ];
 
 export const COMPONENTS = [
-  LayoutColumnComponent,
-  LayoutContainerComponent,
-  LayoutGridCellComponent,
-  LayoutGridComponent,
-  LayoutRowComponent,
+  CardContentComponent,
+  CardTitleComponent,
+  CardComponent,
   LinkComponent,
   TileContentComponent,
   TileTitleComponent,

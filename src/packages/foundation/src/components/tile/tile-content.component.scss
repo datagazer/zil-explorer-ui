@@ -1,7 +1,7 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-cell();
+  @include dg-column();
 
   @include mat-typography-level-to-styles($typography, display-1);
 }

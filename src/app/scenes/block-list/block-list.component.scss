@@ -1,9 +1,7 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-column(start);
-
-  @include zil-card();
+  @include dg-column();
 }
 
 .mat-column {

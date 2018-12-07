@@ -1,13 +1,7 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-column(space-between) {
-    padding: $large-gutter 0;
-  }
+  @include dg-column();
 
-  @include mat-elevation(4);
-
-  background: {
-    color: map-get(map-get($theme, background), app-bar);
-  }
+  padding: map-get($default-gutter, large) 0;
 }

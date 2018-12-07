@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "esnext",
 
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
 
     "experimentalDecorators": true,
 
+    "plugins": [
+      { "name": "@angular/language-service" }
+    ],
+
     "lib": [
       "dom",
-      "es2018"
+      "esnext"
     ],
 
     "baseUrl": "./src/packages",

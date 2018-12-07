@@ -1,109 +1,113 @@
-<mat-tab-group>
-  <mat-tab>
-    <ng-template matTabLabel>TX Blocks</ng-template>
+<zil-card>
+  <zil-card-content>
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template matTabLabel>TX Blocks</ng-template>
 
-    <table mat-table [dataSource]="txBlocks$ | async">
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>#</th>
+        <table mat-table [dataSource]="txBlocks$ | async">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>#</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          <zil-link [routerLink]="['tx', txBlock.id]">{{ txBlock.id }}</zil-link>
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              <zil-link [routerLink]="['tx', txBlock.id]">{{ txBlock.id }}</zil-link>
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="timestamp">
-        <th mat-header-cell *matHeaderCellDef>Age</th>
+          <ng-container matColumnDef="timestamp">
+            <th mat-header-cell *matHeaderCellDef>Age</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          {{ txBlock.timestamp | timeAgo }}
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              {{ txBlock.timestamp | timeAgo }}
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="txCount">
-        <th mat-header-cell *matHeaderCellDef>Transactions</th>
+          <ng-container matColumnDef="txCount">
+            <th mat-header-cell *matHeaderCellDef>Transactions</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          {{ txBlock.txCount | number }}
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              {{ txBlock.txCount | number }}
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="miner">
-        <th mat-header-cell *matHeaderCellDef>Miner</th>
+          <ng-container matColumnDef="miner">
+            <th mat-header-cell *matHeaderCellDef>Miner</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          <zil-link [routerLink]="['/address', txBlock.miner]">{{ txBlock.miner }}</zil-link>
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              <zil-link [routerLink]="['/address', txBlock.miner]">{{ txBlock.miner }}</zil-link>
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="reward">
-        <th mat-header-cell *matHeaderCellDef>Reward</th>
+          <ng-container matColumnDef="reward">
+            <th mat-header-cell *matHeaderCellDef>Reward</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          {{ txBlock.reward | currency : 'ZIL' }}
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              {{ txBlock.reward | currency : 'ZIL' }}
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="dsBlockId">
-        <th mat-header-cell *matHeaderCellDef>DS Block</th>
+          <ng-container matColumnDef="dsBlockId">
+            <th mat-header-cell *matHeaderCellDef>DS Block</th>
 
-        <td mat-cell *matCellDef="let txBlock">
-          <zil-link [routerLink]="['ds', txBlock.dsBlockId]">{{ txBlock.dsBlockId }}</zil-link>
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let txBlock">
+              <zil-link [routerLink]="['ds', txBlock.dsBlockId]">{{ txBlock.dsBlockId }}</zil-link>
+            </td>
+          </ng-container>
 
-      <thead>
-        <tr mat-header-row *matHeaderRowDef="txBlockColumns"></tr>
-      </thead>
+          <thead>
+            <tr mat-header-row *matHeaderRowDef="txBlockColumns"></tr>
+          </thead>
 
-      <tbody>
-        <tr mat-row *matRowDef="let txBlock; columns: txBlockColumns"></tr>
-      </tbody>
-    </table>
-  </mat-tab>
+          <tbody>
+            <tr mat-row *matRowDef="let txBlock; columns: txBlockColumns"></tr>
+          </tbody>
+        </table>
+      </mat-tab>
 
-  <mat-tab>
-    <ng-template matTabLabel>DS Blocks</ng-template>
+      <mat-tab>
+        <ng-template matTabLabel>DS Blocks</ng-template>
 
-    <table mat-table [dataSource]="dsBlocks$ | async">
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>#</th>
+        <table mat-table [dataSource]="dsBlocks$ | async">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>#</th>
 
-        <td mat-cell *matCellDef="let dsBlock">
-          <zil-link [routerLink]="['ds', dsBlock.id]">{{ dsBlock.id }}</zil-link>
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let dsBlock">
+              <zil-link [routerLink]="['ds', dsBlock.id]">{{ dsBlock.id }}</zil-link>
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="timestamp">
-        <th mat-header-cell *matHeaderCellDef>Age</th>
+          <ng-container matColumnDef="timestamp">
+            <th mat-header-cell *matHeaderCellDef>Age</th>
 
-        <td mat-cell *matCellDef="let dsBlock">
-          {{ dsBlock.timestamp | timeAgo }}
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let dsBlock">
+              {{ dsBlock.timestamp | timeAgo }}
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="miner">
-        <th mat-header-cell *matHeaderCellDef>Miner</th>
+          <ng-container matColumnDef="miner">
+            <th mat-header-cell *matHeaderCellDef>Miner</th>
 
-        <td mat-cell *matCellDef="let dsBlock">
-          <zil-link [routerLink]="['/address', dsBlock.miner]">{{ dsBlock.miner }}</zil-link>
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let dsBlock">
+              <zil-link [routerLink]="['/address', dsBlock.miner]">{{ dsBlock.miner }}</zil-link>
+            </td>
+          </ng-container>
 
-      <ng-container matColumnDef="difficulty">
-        <th mat-header-cell *matHeaderCellDef>Difficulty</th>
+          <ng-container matColumnDef="difficulty">
+            <th mat-header-cell *matHeaderCellDef>Difficulty</th>
 
-        <td mat-cell *matCellDef="let dsBlock">
-          {{ dsBlock.difficulty | number }}
-        </td>
-      </ng-container>
+            <td mat-cell *matCellDef="let dsBlock">
+              {{ dsBlock.difficulty | number }}
+            </td>
+          </ng-container>
 
-      <thead>
-        <tr mat-header-row *matHeaderRowDef="dsBlockColumns"></tr>
-      </thead>
+          <thead>
+            <tr mat-header-row *matHeaderRowDef="dsBlockColumns"></tr>
+          </thead>
 
-      <tbody>
-        <tr mat-row *matRowDef="let dsBlock; columns: dsBlockColumns"></tr>
-      </tbody>
-    </table>
-  </mat-tab>
-</mat-tab-group>
+          <tbody>
+            <tr mat-row *matRowDef="let dsBlock; columns: dsBlockColumns"></tr>
+          </tbody>
+        </table>
+      </mat-tab>
+    </mat-tab-group>
+  </zil-card-content>
+</zil-card>

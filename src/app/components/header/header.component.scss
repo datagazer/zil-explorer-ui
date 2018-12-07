@@ -1,15 +1,13 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-row(space-between) {
-    padding: $large-gutter;
+  display: grid;
+
+  padding: map-get($default-gutter, large) 0;
+
+  background: {
+    color: mat-color(map-get($theme, background), card);
   }
 
   @include mat-elevation(6);
-
-  background: {
-    color: mat-color(map-get($theme, primary), default);
-  }
-
-  color: mat-color(map-get($theme, primary), default-contrast);
 }

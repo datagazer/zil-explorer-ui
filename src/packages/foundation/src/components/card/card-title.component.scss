@@ -1,0 +1,13 @@
+@import '~@datagazer/ui';
+
+:host {
+  display: block;
+
+  @include mat-typography-level-to-styles($typography, title);
+
+  text: {
+    transform: uppercase;
+  }
+
+  color: mat-color(map-get($theme, primary), if(map-get($theme, is-dark), lighter, darker));
+}

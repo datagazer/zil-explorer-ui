@@ -1,4 +1,4 @@
-@import './theme';
+@import '~@datagazer/ui';
 
 // Core
 @include mat-core($typography);
@@ -6,6 +6,7 @@
 
 // Components
 @include mat-autocomplete-theme($theme);
+@include mat-button-theme($theme);
 @include mat-expansion-panel-theme($theme);
 @include mat-form-field-theme($theme);
 @include mat-icon-theme($theme);

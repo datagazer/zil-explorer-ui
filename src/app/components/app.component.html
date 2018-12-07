@@ -1,3 +1,11 @@
 <app-header></app-header>
-<app-navbar></app-navbar>
-<app-outlet></app-outlet>
+
+<dg-grid container>
+  <dg-grid-cell column-span="3">
+    <app-navbar></app-navbar>
+  </dg-grid-cell>
+
+  <dg-grid-cell column-span="9">
+    <app-outlet></app-outlet>
+  </dg-grid-cell>
+</dg-grid>

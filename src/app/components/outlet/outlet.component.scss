@@ -1,5 +1,11 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  padding: $large-gutter;
+  @include dg-column();
+
+  place: {
+    content: start stretch;
+  }
+
+  padding: map-get($default-gutter, large) 0;
 }

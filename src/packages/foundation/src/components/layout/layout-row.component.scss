@@ -1,9 +1,0 @@
-@import 'ui-kit';
-
-:host {
-  @each $alignment in (start, space-between, end) {
-    &[zil-align="#{$alignment}"] {
-      @include zil-grid-row($alignment);
-    }
-  }
-}

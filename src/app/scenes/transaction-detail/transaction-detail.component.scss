@@ -1,9 +1,5 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-column(start) {
-    padding: $large-gutter;
-  }
-
-  @include zil-card();
+  @include dg-column();
 }

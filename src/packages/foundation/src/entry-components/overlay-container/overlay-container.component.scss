@@ -1,7 +1,13 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid(stretch, stretch);
+  @include dg-grid();
 
-  @include zil-base();
+  @include mat-typography-level-to-styles($typography, body-1);
+
+  background: {
+    color: mat-color(map-get($theme, background), background);
+  }
+
+  color: mat-color(map-get($theme, foreground), text);
 }

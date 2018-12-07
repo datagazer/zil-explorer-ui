@@ -1,71 +1,71 @@
-<zil-layout-grid>
-  <zil-layout-grid-cell zil-span="6">
+<dg-grid>
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Transaction # Trend</zil-tile-title>
       <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.transactionNum"></zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>ZIL USD Price Trend</zil-tile-title>
       <zil-tile-content zilLineChart [data]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Transaction Rate</zil-tile-title>
       <zil-tile-content>580 / 3800</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Number of Known Peers</zil-tile-title>
       <zil-tile-content>{{ (blockchainInfo$ | async)?.NumPeers | number }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Number of Shards</zil-tile-title>
       <zil-tile-content>{{ (blockchainInfo$ | async)?.ShardingStructure.NumPeers.length | number }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>ZIL USD Price</zil-tile-title>
       <zil-tile-content>{{ (marketInfo$ | async)?.price }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>ZIL Total Market Cap</zil-tile-title>
       <zil-tile-content>{{ (marketInfo$ | async)?.capitalization }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>ZIL Total Outstanding</zil-tile-title>
       <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Mining Difficulty</zil-tile-title>
       <zil-tile-content>{{ (marketInfo$ | async)?.miningDifficulty | number }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
+  </dg-grid-cell>
 
-  <zil-layout-grid-cell zil-span="6">
+  <dg-grid-cell column-span="6">
     <zil-tile>
       <zil-tile-title>Blockchain Size</zil-tile-title>
       <zil-tile-content>{{ 8000 | number }}</zil-tile-content>
     </zil-tile>
-  </zil-layout-grid-cell>
-</zil-layout-grid>
+  </dg-grid-cell>
+</dg-grid>

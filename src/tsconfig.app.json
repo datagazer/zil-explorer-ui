@@ -1,13 +1,12 @@
 {
   "extends": "../tsconfig.json",
 
-  "exclude": [
-    "**/*.spec.ts"
+  "include": [
+    "../node_modules/@datagazer/**/*.ts",
+    "./**/*.ts"
   ],
 
-  "compilerOptions": {
-    "plugins": [
-      { "name": "@angular/language-service" }
-    ]
-  }
+  "exclude": [
+    "./**/*.spec.ts"
+  ]
 }

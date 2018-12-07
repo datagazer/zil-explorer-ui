@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import 'brace/mode/ocaml';
+import 'brace/theme/tomorrow';
+import './scilla-mode';
 
 @Component({
   selector: 'app-smart-contract-detail',

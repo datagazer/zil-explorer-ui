@@ -1,16 +1,16 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-row(start);
+  display: block;
 }
 
 input {
   width: 500px;
 
-  padding: ($large-gutter / 4);
+  padding: (map-get($default-gutter, large) / 4);
 
   border: 1px solid mat-color(map-get($theme, background), app-bar) {
-    radius: (2 * $border-radius);
+    radius: (2 * $default-radius);
   }
 
   @include mat-typography-level-to-styles($typography, subheading-2);

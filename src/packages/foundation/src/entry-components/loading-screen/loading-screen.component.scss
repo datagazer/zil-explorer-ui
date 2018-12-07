@@ -1,9 +1,15 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
-  @include zil-grid-cell() {
-    place: {
-      self: center;
+  display: block;
+
+  grid: {
+    column: {
+      end: $grid-size span;
     }
+  }
+
+  place: {
+    self: center;
   }
 }

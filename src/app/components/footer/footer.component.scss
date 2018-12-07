@@ -1,0 +1,11 @@
+@import '~@datagazer/ui';
+
+:host {
+  display: block;
+}
+
+.mat-icon::before {
+  vertical-align: middle;
+  font-size: 1.25em;
+  line-height: 1.3;
+}

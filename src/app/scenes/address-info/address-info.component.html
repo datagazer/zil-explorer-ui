@@ -1,17 +1,21 @@
-<mat-form-field>
-  <mat-label>Address</mat-label>
-  <input matInput value="{{ address }}" readonly>
-</mat-form-field>
+<zil-card>
+  <zil-card-content>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput value="{{ address }}" readonly>
+    </mat-form-field>
 
-<mat-form-field>
-  <mat-label>Balance</mat-label>
-  <input matInput value="{{ balance.balance }}" readonly>
-</mat-form-field>
+    <mat-form-field>
+      <mat-label>Balance</mat-label>
+      <input matInput value="{{ balance.balance }}" readonly>
+    </mat-form-field>
 
-<mat-form-field>
-  <mat-label>Nonce</mat-label>
-  <input matInput value="{{ balance.nonce }}" readonly>
-</mat-form-field>
+    <mat-form-field>
+      <mat-label>Nonce</mat-label>
+      <input matInput value="{{ balance.nonce }}" readonly>
+    </mat-form-field>
+  </zil-card-content>
+</zil-card>
 
 <mat-accordion *ngIf="smartContracts">
   <mat-expansion-panel *ngFor="let smartContract of smartContracts">

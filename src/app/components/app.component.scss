@@ -1,15 +1,11 @@
-@import 'ui-kit';
+@import '~@datagazer/ui';
 
 :host {
   display: grid;
 
   grid: {
     template: {
-      areas: 'header header'
-             'navbar outlet';
-
       rows: auto 1fr;
-      columns: minmax(auto, 0.25fr) 1fr;
     }
   }
 
@@ -19,34 +15,28 @@
     width: $min-layout-width;
   }
 
-  @include zil-base();
+  @include mat-typography-level-to-styles($typography, body-1);
+
+  background: {
+    color: mat-color(map-get($theme, background), background);
+  }
+
+  color: mat-color(map-get($theme, foreground), text);
 }
 
 app-header {
-  position: relative;
-  z-index: 2;
-
-  grid: {
-    area: header;
-  }
+  // position: relative;
+  // z-index: 2;
 }
 
 app-navbar {
-  position: relative;
-  z-index: 1;
-
-  grid: {
-    area: navbar;
-  }
+  // position: relative;
+  // z-index: 1;
 }
 
 app-outlet {
-  position: relative;
-  z-index: 0;
-
-  grid: {
-    area: outlet;
-  }
+  // position: relative;
+  // z-index: 0;
 
   overflow: {
     y: auto;

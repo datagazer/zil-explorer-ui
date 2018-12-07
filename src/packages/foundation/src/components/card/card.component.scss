@@ -5,6 +5,10 @@
 
   padding: map-get($default-gutter, large);
 
+  &[no-padding] {
+    padding: 0;
+  }
+
   border: {
     radius: $default-radius;
   }

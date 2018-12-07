@@ -9,11 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './components/app.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LogoComponent } from './components/logo/logo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OutletComponent } from './components/outlet/outlet.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { TitleComponent } from './components/title/title.component';
 
 // Resolvers
 import { BalanceResolver } from './resolvers/balance.resolver';
@@ -49,11 +50,12 @@ export const DEPENDENCIES = [
 
 export const COMPONENTS = [
   AppComponent,
+  FooterComponent,
   HeaderComponent,
+  LogoComponent,
   NavbarComponent,
   OutletComponent,
-  SearchBarComponent,
-  TitleComponent
+  SearchBarComponent
 ];
 
 export const RESOLVERS = [

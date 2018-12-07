@@ -1,9 +1,0 @@
-@import 'ui-kit';
-
-:host {
-  @for $column-span from 1 through $layout-grid-columns {
-    &[zil-span="#{$column-span}"] {
-      @include zil-grid-cell($column-span);
-    }
-  }
-}

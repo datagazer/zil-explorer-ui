@@ -1,0 +1,7 @@
+@import '~@datagazer/ui';
+
+:host {
+  @include dg-column();
+
+  @include mat-typography-level-to-styles($typography, body-1);
+}
