@@ -17,6 +17,7 @@ export class TransactionService {
         timestamp: item.timestamp,
         addressFrom: this._getAddressFromPublicKey(item.senderPubKey),
         addressTo: item.toAddr,
+        gasPrice: item.gasPrice,
         value: Number(item.amount)
       })))
     );

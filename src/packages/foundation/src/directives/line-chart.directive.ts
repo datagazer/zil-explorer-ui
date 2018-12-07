@@ -1,11 +1,12 @@
 import { Directive, ElementRef, HostListener, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Options, chart } from 'highcharts';
 
 @Directive({
   selector: '[zilLineChart]'
 })
 export class LineChartDirective implements OnChanges {
   @Input()
-  public readonly data: any[];
+  public readonly options: Options;
 
   public constructor(
     private readonly _elementRef: ElementRef
@@ -13,8 +14,8 @@ export class LineChartDirective implements OnChanges {
 
   /** @implements OnChanges */
   public ngOnChanges(changes: SimpleChanges): void {
-    if ('data' in changes) {
-      const { data: { currentValue } } = changes;
+    if ('options' in changes) {
+      const { options: { currentValue } } = changes;
 
       if (currentValue) {
         this._draw(currentValue);
@@ -22,16 +23,19 @@ export class LineChartDirective implements OnChanges {
     }
   }
 
-  @HostListener('window:resize')
-  public onResize(): void {
-    this._draw(this.data);
-  }
+  private _draw(options: Options): void {
+    chart(this._elementRef.nativeElement, {
+      ...options,
 
-  private _draw(data: any[]): void {
-    const chart = new google.charts.Line(this._elementRef.nativeElement);
+      chart: {
+        type: 'line'
+      },
 
-    chart.draw(google.visualization.arrayToDataTable(data), {
-      legend: { position: 'none' }
+      title: null,
+
+      credits: {
+        enabled: false
+      }
     });
   }
 }

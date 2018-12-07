@@ -20,6 +20,7 @@ export class TransactionListComponent {
     'timestamp',
     'addressFrom',
     'addressTo',
+    'gasPrice',
     'value'
   ];
 

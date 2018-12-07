@@ -33,6 +33,14 @@
         </td>
       </ng-container>
 
+      <ng-container matColumnDef="gasPrice">
+        <th mat-header-cell *matHeaderCellDef>Gas Price</th>
+
+        <td mat-cell *matCellDef="let transaction">
+          {{ transaction.gasPrice | number }}
+        </td>
+      </ng-container>
+
       <ng-container matColumnDef="value">
         <th mat-header-cell *matHeaderCellDef>Value</th>
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { sha256 } from 'hash.js';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -45,7 +46,10 @@ export class ZilliqaService {
     const request = this._createRequest('GetTransaction', [id]);
 
     return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
-      map(({ result }) => result)
+      map(({ result }) => ({
+        ...result,
+        fromAddr: this._getAddressFromPublicKey(result.senderPubKey)
+      }))
     );
   }
 
@@ -91,5 +95,9 @@ export class ZilliqaService {
 
   private _createRequest(method: string, params?: any[]): JsonRpcRequest {
     return { id: this._nextCallId++, jsonrpc: '2.0', method, params };
+  }
+
+  private _getAddressFromPublicKey(publicKey: string): string {
+    return sha256().update(publicKey, 'hex').digest('hex').slice(24);
   }
 }

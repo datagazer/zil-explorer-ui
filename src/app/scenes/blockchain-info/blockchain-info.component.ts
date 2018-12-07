@@ -26,29 +26,83 @@ export class BlockchainInfoComponent {
     switchMap(() => this.$market.getCharts()),
 
     map((items) => ({
-      transactionNum: [
-        [
-          'Date',
-          'Transaction #'
+      transactionNum: {
+        series: [
+          {
+            name: 'Transaction Number',
+
+            data: items.map((item) => [
+              item.dayAdded,
+              item.transactionNum
+            ])
+          }
         ],
 
-        ...items.map((item) => [
-          item.dayAdded,
-          item.transactionNum
-        ])
-      ],
+        xAxis: {
+          type: 'datetime'
+        },
 
-      zilPrice: [
-        [
-          'Date',
-          'ZIL USD Price'
+        yAxis: {
+          type: 'linear',
+          title: null
+        },
+
+        legend: {
+          enabled: false
+        }
+      },
+
+      dsMiningDifficulty: {
+        series: [
+          {
+            name: 'Mining Difficulty',
+
+            data: items.map((item) => [
+              item.dayAdded,
+              item.dsMiningDifficulty
+            ])
+          }
         ],
 
-        ...items.map((item) => [
-          item.dayAdded,
-          item.zilPrice
-        ])
-      ]
+        xAxis: {
+          type: 'datetime'
+        },
+
+        yAxis: {
+          type: 'linear',
+          title: null
+        },
+
+        legend: {
+          enabled: false
+        }
+      },
+
+      zilPrice: {
+        series: [
+          {
+            name: 'ZIL USD Price',
+
+            data: items.map((item) => [
+              item.dayAdded,
+              item.zilPrice
+            ])
+          }
+        ],
+
+        xAxis: {
+          type: 'datetime'
+        },
+
+        yAxis: {
+          type: 'linear',
+          title: null
+        },
+
+        legend: {
+          enabled: false
+        }
+      }
     })),
 
     publish(),

@@ -3,6 +3,10 @@
 :host {
   @include dg-column();
 
+  place: {
+    content: start stretch;
+  }
+
   padding: map-get($default-gutter, large);
 
   border: {

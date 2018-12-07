@@ -11,6 +11,11 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Gas Price</mat-label>
+      <input matInput value="{{ transaction.gasPrice }}" readonly>
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Amount</mat-label>
       <input matInput value="{{ transaction.amount }}" readonly>
     </mat-form-field>
@@ -32,7 +37,7 @@
 
     <mat-form-field>
       <mat-label>From Address</mat-label>
-      <input matInput value="???" readonly>
+      <input matInput value="{{ transaction.fromAddr }}" readonly>
     </mat-form-field>
 
     <mat-form-field>

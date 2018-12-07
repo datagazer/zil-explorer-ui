@@ -16,8 +16,9 @@ export class MarketService {
   public getCharts(): Observable<any[]> {
     return this.$httpClient.get<any[]>('/v1/charts').pipe(
       map((items) => items.map((item) => ({
-        dayAdded: new Date(item.dayAdded),
+        dayAdded: new Date(item.dayAdded).getTime(),
         transactionNum: item.transactionNum,
+        dsMiningDifficulty: item.dsMiningDifficulty,
         zilPrice: item.zilPrice
       })))
     );
