@@ -8,5 +8,9 @@
 
   "exclude": [
     "./**/*.spec.ts"
-  ]
+  ],
+
+  "compilerOptions": {
+    "allowJs": true
+  }
 }
