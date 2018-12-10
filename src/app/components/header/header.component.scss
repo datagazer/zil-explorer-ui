@@ -1,13 +1,11 @@
 @import '~@datagazer/ui';
 
 :host {
-  display: grid;
-
   padding: map-get($default-gutter, large) 0;
 
   background: {
     color: mat-color(map-get($theme, background), card);
   }
 
-  @include mat-elevation(6);
+  @include dg-elevation(4);
 }

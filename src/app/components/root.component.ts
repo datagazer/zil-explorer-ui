@@ -5,11 +5,11 @@ import { merge } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-component',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './root.component.html',
+  styleUrls: ['./root.component.scss']
 })
-export class AppComponent implements OnInit {
+export class RootComponent implements OnInit {
   public constructor(
     private readonly $router: Router,
 

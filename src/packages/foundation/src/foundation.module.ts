@@ -6,7 +6,7 @@ import { PortalModule } from '@angular/cdk/portal';
 
 // Modules
 import { LayoutModule } from '@datagazer/layout';
-import { TypographyModule } from '@datagazer/typography';
+import { StructureModule } from '@datagazer/structure';
 import { MaterialModule } from '@zilliqa/material';
 import { AceEditorModule } from 'ng2-ace-editor';
 
@@ -40,7 +40,7 @@ export const DEPENDENCIES = [
 
 export const MODULES = [
   LayoutModule,
-  TypographyModule,
+  StructureModule,
   MaterialModule,
   AceEditorModule
 ];

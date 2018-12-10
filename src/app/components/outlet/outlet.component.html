@@ -1,2 +1,12 @@
-<router-outlet hidden></router-outlet>
-<app-footer></app-footer>
+<dg-grid container>
+  <dg-grid-cell column-span="3">
+    <app-navbar></app-navbar>
+  </dg-grid-cell>
+
+  <dg-grid-cell column-span="9">
+    <dg-column>
+      <router-outlet hidden></router-outlet>
+      <app-footer></app-footer>
+    </dg-column>
+  </dg-grid-cell>
+</dg-grid>

@@ -1,0 +1,23 @@
+@import '~@datagazer/ui';
+
+:host {
+  display: grid;
+
+  grid: {
+    template: {
+      rows: auto 1fr;
+    }
+  }
+
+  height: 100vh;
+}
+
+app-header {
+  position: relative;
+  z-index: 1;
+}
+
+app-outlet {
+  position: relative;
+  z-index: 0;
+}

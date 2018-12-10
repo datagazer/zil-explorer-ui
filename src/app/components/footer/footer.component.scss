@@ -4,8 +4,28 @@
   display: block;
 }
 
+zil-card {
+  border: {
+    bottom: {
+      left: {
+        radius: 0;
+      }
+
+      right: {
+        radius: 0;
+      }
+    }
+  }
+}
+
 .mat-icon::before {
   vertical-align: middle;
   font-size: 1.25em;
   line-height: 1.3;
+}
+
+.content {
+  place: {
+    items: normal;
+  }
 }

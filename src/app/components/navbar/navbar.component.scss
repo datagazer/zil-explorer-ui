@@ -1,7 +1,0 @@
-@import '~@datagazer/ui';
-
-:host {
-  @include dg-column();
-
-  padding: map-get($default-gutter, large) 0;
-}

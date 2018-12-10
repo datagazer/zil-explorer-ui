@@ -8,12 +8,12 @@ import { FoundationModule } from '@zilliqa/foundation';
 import { AppRoutingModule } from './app-routing.module';
 
 // Components
-import { AppComponent } from './components/app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { OutletComponent } from './components/outlet/outlet.component';
+import { RootComponent } from './components/root.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 // Resolvers
@@ -50,12 +50,12 @@ export const DEPENDENCIES = [
 ];
 
 export const COMPONENTS = [
-  AppComponent,
   FooterComponent,
   HeaderComponent,
   LogoComponent,
   NavbarComponent,
   OutletComponent,
+  RootComponent,
   SearchBarComponent
 ];
 
@@ -94,6 +94,6 @@ export const SERVICES = [
   imports: [DEPENDENCIES, AppRoutingModule],
   declarations: [COMPONENTS, SCENES],
   providers: [RESOLVERS, SERVICES],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
 export class AppModule {}

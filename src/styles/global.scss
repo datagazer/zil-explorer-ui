@@ -1,4 +1,5 @@
 @import '~@datagazer/ui';
+@import '~@datagazer/ui/reset';
 
 // Core
 @include mat-core($typography);
@@ -7,6 +8,7 @@
 // Components
 @include mat-autocomplete-theme($theme);
 @include mat-button-theme($theme);
+@include mat-divider-theme($theme);
 @include mat-expansion-panel-theme($theme);
 @include mat-form-field-theme($theme);
 @include mat-icon-theme($theme);
@@ -15,3 +17,25 @@
 @include mat-progress-spinner-theme($theme);
 @include mat-table-theme($theme);
 @include mat-tabs-theme($theme);
+
+.mat-nav-list {
+  padding: {
+    top: initial !important;
+  }
+}
+
+.mat-table {
+  width: 100%;
+
+  background: {
+    color: initial !important;
+  }
+}
+
+.mat-cell, .mat-header-cell {
+  padding: map-get($default-gutter, small) !important;
+
+  line: {
+    height: 1;
+  }
+}
