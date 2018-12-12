@@ -1,5 +1,10 @@
 <zil-card>
   <zil-card-content>
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input matInput value="{{ address }}" readonly>
+    </mat-form-field>
+
     <mat-table [dataSource]="smartContract">
       <ng-container matColumnDef="vname">
         <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>

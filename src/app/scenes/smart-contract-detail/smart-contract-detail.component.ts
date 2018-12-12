@@ -10,6 +10,8 @@ import './scilla-mode';
   styleUrls: ['./smart-contract-detail.component.scss']
 })
 export class SmartContractDetailComponent {
+  public address: string = this.$activatedRoute.snapshot.params.address;
+
   public smartContract: any[] = [
     ...this.$activatedRoute.snapshot.data.smartContractInit,
     ...this.$activatedRoute.snapshot.data.smartContractState

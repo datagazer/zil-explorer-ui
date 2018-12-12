@@ -3,6 +3,8 @@
 :host {
   @include dg-grid();
 
+  width: 100%;
+
   @include mat-typography-level-to-styles($typography, body-1);
 
   background: {
