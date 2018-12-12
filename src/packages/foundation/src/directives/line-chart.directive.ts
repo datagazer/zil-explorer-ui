@@ -28,7 +28,8 @@ export class LineChartDirective implements OnChanges {
       ...options,
 
       chart: {
-        type: 'line'
+        type: 'line',
+        height: 200
       },
 
       title: null,
