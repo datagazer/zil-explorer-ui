@@ -1,0 +1,5 @@
+@import '~@datagazer/ui';
+
+:host {
+  @include dg-column();
+}

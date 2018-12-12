@@ -32,6 +32,7 @@ import { AddressInfoComponent } from './scenes/address-info/address-info.compone
 import { BlockListComponent } from './scenes/block-list/block-list.component';
 import { BlockchainInfoComponent } from './scenes/blockchain-info/blockchain-info.component';
 import { DsBlockDetailComponent } from './scenes/ds-block-detail/ds-block-detail.component';
+import { HistoryComponent } from './scenes/history/history.component';
 import { ShardCheckComponent } from './scenes/shard-check/shard-check.component';
 import { SmartContractDetailComponent } from './scenes/smart-contract-detail/smart-contract-detail.component';
 import { TransactionDetailComponent } from './scenes/transaction-detail/transaction-detail.component';
@@ -76,6 +77,7 @@ export const SCENES = [
   BlockListComponent,
   BlockchainInfoComponent,
   DsBlockDetailComponent,
+  HistoryComponent,
   ShardCheckComponent,
   SmartContractDetailComponent,
   TransactionDetailComponent,

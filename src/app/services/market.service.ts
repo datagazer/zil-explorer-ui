@@ -23,4 +23,15 @@ export class MarketService {
       })))
     );
   }
+
+  public getFullCharts(): Observable<any[]> {
+    return this.$httpClient.get<any[]>('/v1/charts/full').pipe(
+      map((items) => items.map((item) => ({
+        dayAdded: new Date(item.dayAdded).getTime(),
+        transactionNum: item.transactionNum,
+        dsMiningDifficulty: item.dsMiningDifficulty,
+        zilPrice: item.zilPrice
+      })))
+    );
+  }
 }
