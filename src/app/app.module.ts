@@ -18,6 +18,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 
 // Resolvers
 import { BalanceResolver } from './resolvers/balance.resolver';
+import { BlockchainInfoResolver } from './resolvers/blockchain-info.resolver';
 import { DsBlockResolver } from './resolvers/ds-block.resolver';
 import { SmartContractCodeResolver } from './resolvers/smart-contract-code.resolver';
 import { SmartContractInitResolver } from './resolvers/smart-contract-init.resolver';
@@ -62,6 +63,7 @@ export const COMPONENTS = [
 
 export const RESOLVERS = [
   BalanceResolver,
+  BlockchainInfoResolver,
   DsBlockResolver,
   SmartContractCodeResolver,
   SmartContractInitResolver,

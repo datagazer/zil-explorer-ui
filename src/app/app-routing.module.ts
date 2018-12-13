@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 // Resolvers
 import { BalanceResolver } from './resolvers/balance.resolver';
+import { BlockchainInfoResolver } from './resolvers/blockchain-info.resolver';
 import { DsBlockResolver } from './resolvers/ds-block.resolver';
 import { SmartContractCodeResolver } from './resolvers/smart-contract-code.resolver';
 import { SmartContractInitResolver } from './resolvers/smart-contract-init.resolver';
@@ -91,7 +92,11 @@ export const ROUTES = RouterModule.forRoot([
     children: [
       {
         path: '',
-        component: ShardCheckComponent
+        component: ShardCheckComponent,
+
+        resolve: {
+          blockchainInfo: BlockchainInfoResolver
+        }
       }
     ]
   },
