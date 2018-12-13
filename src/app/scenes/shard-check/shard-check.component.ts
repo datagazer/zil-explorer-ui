@@ -9,8 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ShardCheckComponent {
   public shardsCount: number = this.$activatedRoute.snapshot.data.blockchainInfo.ShardingStructure.NumPeers.length - 1;
 
-  public wallet: string = 'daceb510e94510eb51f44af57db3b51e9ec1d4b4';
-  public smartContract: string = '1153e741acb22416fe086b7ba7a678b1e16d295a';
+  public wallet: string;
+  public smartContract: string;
 
   public result: boolean = null;
 
