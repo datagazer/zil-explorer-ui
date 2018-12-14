@@ -16,7 +16,7 @@ export class DsBlockService {
         id: Number(item.BlockNum),
         timestamp: Math.floor(item.timestamp / 1000),
         miner: this._getAddressFromPublicKey(item.leaderPubKey),
-        difficulty: item.difficulty
+        difficulty: item.Difficulty
       })))
     );
   }
