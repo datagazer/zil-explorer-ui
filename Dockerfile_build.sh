@@ -10,10 +10,36 @@ echo -e "\t \t \t \t \t \t \t \t \t \t Building a project"
 cat > Dockerfile << EOF
 FROM nginx:stable
 MAINTAINER Oleksii Petrovskyi
-RUN apt-get update; apt-get install -y openssl  && \
+RUN apt-get update; apt-get install -y openssl dnsmasq supervisor && \
         rm -rf /var/lib/apt/lists/*
 RUN rm /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/nginx.conf
+RUN mkdir -p /etc/supervisor/conf.d/ 
+
+RUN echo '\n\
+[supervisord]\n\
+loglevel=critical\n\
+\n\
+\n\
+[program:dnsmasq]\n\
+command = /usr/sbin/dnsmasq --keep-in-foreground --log-facility=/var/log/nginx/dnsmasq.log --user=root --cache-size=0  --interface=lo -q\n\
+autostart=true\n\
+autorestart=true\n\
+redirect_stderr=true\n\
+stdout_logfile=/var/log/nginx/supervisor_dnsmasq.log\n\
+stdout_logfile_maxbytes=100MB\n\
+\n\
+\n\
+[program:nginx]\n\
+command = nginx -g "daemon off;"\n\
+autostart=true\n\
+autorestart=false\n\
+redirect_stderr=true\n\
+stdout_logfile=/var/log/nginx/supervisor_nginx.log\n\
+stdout_logfile_maxbytes=100MB\n\
+\n '\
+  > /etc/supervisor/conf.d/supervisor_processes.conf
+
 RUN echo  '\n\
   user  nginx; \n\
   worker_processes  2; \n\
@@ -23,6 +49,7 @@ RUN echo  '\n\
       worker_connections  1024; \n\
   } \n\
   http { \n\
+      resolver 127.0.0.1; \n\
       include       /etc/nginx/mime.types; \n\
       default_type  application/octet-stream; \n\
       log_format  main  '"'"'\$http_x_forwarded_for - \$remote_user [\$time_local] "\$request" '"'"'  \n\
@@ -46,7 +73,7 @@ RUN echo  '\n\
   } \n\
   server { \n\
           set \$backend_port  8080; \n\
-          set \$backend 172.17.0.1:\$backend_port; \n\
+          set \$backend applications-alb.common.datagazer:\$backend_port; \n\
           listen  443 ssl; \n\
           server_name _; \n\
           proxy_connect_timeout  30s; \n\
@@ -160,9 +187,11 @@ wzHeWIwo26BuBUZQqL0a1h79\n\
 RUN mkdir -p /var/www/html/web/
 ADD dist/ /var/www/html/web/
 EXPOSE 443
+CMD ["supervisord", "-n"]
 EOF
 
 docker run -v "$(pwd)":/home/node  -ti node:10.12-alpine sh -c  " cd /home/node && npm install -d &&  npm run build:release -- --base-href \"/\" "
+#docker run -v "$(pwd)":/home/node  -ti node:10.12-alpine sh -c  " cd /home/node && npm install -d &&  npm run build -- --base-href \"/\" "
 
 echo -e "\t \t \t \t \t \t \t \t \t \tWraping artifact into docker container"
 
