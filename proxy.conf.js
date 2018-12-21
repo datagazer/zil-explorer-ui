@@ -2,11 +2,23 @@ const apiVersion = 'v1';
 
 module.exports = {
   [`/${apiVersion}/*`]: {
-    target: 'http://54.93.77.136:8080',
+    target: 'https://zilexplorer.datagazer.io',
+    secure: false,
+
+    // pathRewrite: {
+    //   [`^/${apiVersion}`]: ''
+    // },
+
+    changeOrigin: true,
+    autoRewrite: true
+  },
+
+  '/zilliqa': {
+    target: 'https://api.zilliqa.com',
     secure: false,
 
     pathRewrite: {
-      [`^/${apiVersion}`]: '/'
+      '^/zilliqa': ''
     },
 
     changeOrigin: true,

@@ -1,6 +1,13 @@
 <dg-grid>
   <dg-grid-cell column-span="12">
     <zil-tile>
+      <zil-tile-title>ZIL USD Price</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
+
+  <dg-grid-cell column-span="12">
+    <zil-tile>
       <zil-tile-title>Transaction Number</zil-tile-title>
       <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.transactionNum"></zil-tile-content>
     </zil-tile>
@@ -8,15 +15,15 @@
 
   <dg-grid-cell column-span="12">
     <zil-tile>
-      <zil-tile-title>Mining Difficulty</zil-tile-title>
+      <zil-tile-title>DS Mining Difficulty</zil-tile-title>
       <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.dsMiningDifficulty"></zil-tile-content>
     </zil-tile>
   </dg-grid-cell>
 
   <dg-grid-cell column-span="12">
     <zil-tile>
-      <zil-tile-title>ZIL USD Price</zil-tile-title>
-      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
+      <zil-tile-title>TX Mining Difficulty</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.txMiningDifficulty"></zil-tile-content>
     </zil-tile>
   </dg-grid-cell>
 </dg-grid>

@@ -55,11 +55,37 @@ export class BlockchainInfoComponent {
       dsMiningDifficulty: {
         series: [
           {
-            name: 'Mining Difficulty',
+            name: 'DS Mining Difficulty',
 
             data: items.map((item) => [
               item.dayAdded,
               item.dsMiningDifficulty
+            ])
+          }
+        ],
+
+        xAxis: {
+          type: 'datetime'
+        },
+
+        yAxis: {
+          type: 'linear',
+          title: null
+        },
+
+        legend: {
+          enabled: false
+        }
+      },
+
+      txMiningDifficulty: {
+        series: [
+          {
+            name: 'TX Mining Difficulty',
+
+            data: items.map((item) => [
+              item.dayAdded,
+              item.txMiningDifficulty
             ])
           }
         ],

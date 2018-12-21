@@ -17,9 +17,10 @@ export class MarketService {
     return this.$httpClient.get<any[]>('/v1/charts').pipe(
       map((items) => items.map((item) => ({
         dayAdded: new Date(item.dayAdded).getTime(),
+        zilPrice: item.zilPrice,
         transactionNum: item.transactionNum,
         dsMiningDifficulty: item.dsMiningDifficulty,
-        zilPrice: item.zilPrice
+        txMiningDifficulty: item.txMiningDifficulty
       })))
     );
   }
@@ -28,9 +29,10 @@ export class MarketService {
     return this.$httpClient.get<any[]>('/v1/charts/full').pipe(
       map((items) => items.map((item) => ({
         dayAdded: new Date(item.dayAdded).getTime(),
+        zilPrice: item.zilPrice,
         transactionNum: item.transactionNum,
         dsMiningDifficulty: item.dsMiningDifficulty,
-        zilPrice: item.zilPrice
+        txMiningDifficulty: item.txMiningDifficulty
       })))
     );
   }

@@ -1,64 +1,85 @@
 <dg-grid>
-  <dg-grid-cell column-span="6">
-    <dg-column>
-      <!-- <zil-tile>
-        <zil-tile-title>Transaction Rate</zil-tile-title>
-        <zil-tile-content>580 / 3800</zil-tile-content>
-      </zil-tile> -->
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>Number of Shards</zil-tile-title>
+      <zil-tile-content>{{ (blockchainInfo$ | async)?.ShardingStructure.NumPeers.length | number }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>Number of Known Peers</zil-tile-title>
-        <zil-tile-content>{{ (blockchainInfo$ | async)?.NumPeers | number }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>Number of Peers</zil-tile-title>
+      <zil-tile-content>{{ (blockchainInfo$ | async)?.NumPeers | number }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>Number of Shards</zil-tile-title>
-        <zil-tile-content>{{ (blockchainInfo$ | async)?.ShardingStructure.NumPeers.length | number }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>Transaction Rate</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.transactionRate | number }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>ZIL USD Price</zil-tile-title>
-        <zil-tile-content>{{ (marketInfo$ | async)?.price }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>Total Market Cap</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.capitalization }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>ZIL Total Market Cap</zil-tile-title>
-        <zil-tile-content>{{ (marketInfo$ | async)?.capitalization }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>ZIL USD Price</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.price }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>ZIL Total Outstanding</zil-tile-title>
-        <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>ZIL Total Outstanding</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>Mining Difficulty</zil-tile-title>
-        <zil-tile-content>{{ (marketInfo$ | async)?.miningDifficulty | number }}</zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>DS Mining Difficulty</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.dsMiningDifficulty | number }}</zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <!-- <zil-tile>
-        <zil-tile-title>Blockchain Size</zil-tile-title>
-        <zil-tile-content>{{ 8000 | number }}</zil-tile-content>
-      </zil-tile> -->
-    </dg-column>
+  <dg-grid-cell column-span="3">
+    <zil-tile>
+      <zil-tile-title>TX Mining Difficulty</zil-tile-title>
+      <zil-tile-content>{{ (marketInfo$ | async)?.txMiningDifficulty | number }}</zil-tile-content>
+    </zil-tile>
   </dg-grid-cell>
 
   <dg-grid-cell column-span="6">
-    <dg-column>
-      <zil-tile>
-        <zil-tile-title>Transaction Number</zil-tile-title>
-        <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.transactionNum"></zil-tile-content>
-      </zil-tile>
+    <zil-tile>
+      <zil-tile-title>ZIL USD Price</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>Mining Difficulty</zil-tile-title>
-        <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.dsMiningDifficulty"></zil-tile-content>
-      </zil-tile>
+  <dg-grid-cell column-span="6">
+    <zil-tile>
+      <zil-tile-title>Transaction Number</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.transactionNum"></zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
 
-      <zil-tile>
-        <zil-tile-title>ZIL USD Price</zil-tile-title>
-        <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.zilPrice"></zil-tile-content>
-      </zil-tile>
-    </dg-column>
+  <dg-grid-cell column-span="6">
+    <zil-tile>
+      <zil-tile-title>DS Mining Difficulty</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.dsMiningDifficulty"></zil-tile-content>
+    </zil-tile>
+  </dg-grid-cell>
+
+  <dg-grid-cell column-span="6">
+    <zil-tile>
+      <zil-tile-title>TX Mining Difficulty</zil-tile-title>
+      <zil-tile-content zilLineChart [options]="(marketCharts$ | async)?.txMiningDifficulty"></zil-tile-content>
+    </zil-tile>
   </dg-grid-cell>
 </dg-grid>

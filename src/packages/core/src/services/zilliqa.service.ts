@@ -1,27 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { Injectable, InjectionToken } from '@angular/core';
 import { sha256 } from 'hash.js';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-// Injection Tokens
-export const API_URL = new InjectionToken<string>('API_URL');
 
 @Injectable()
 export class ZilliqaService {
   private _nextCallId: number = 1;
 
   public constructor(
-    private readonly $httpClient: HttpClient,
-
-    @Inject(API_URL)
-    private readonly _apiUrl: string
+    private readonly $httpClient: HttpClient
   ) {}
 
   public getBlockchainInfo(): Observable<any> {
     const request = this._createRequest('GetBlockchainInfo');
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -29,7 +23,7 @@ export class ZilliqaService {
   public getDsBlock(id: number): Observable<any> {
     const request = this._createRequest('GetDsBlock', [id]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -37,7 +31,7 @@ export class ZilliqaService {
   public getTxBlock(id: number): Observable<any> {
     const request = this._createRequest('GetTxBlock', [id]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -45,7 +39,7 @@ export class ZilliqaService {
   public getTransaction(id: string): Observable<any> {
     const request = this._createRequest('GetTransaction', [id]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => ({
         ...result,
         fromAddr: this._getAddressFromPublicKey(result.senderPubKey)
@@ -56,7 +50,7 @@ export class ZilliqaService {
   public getBalance(address: string): Observable<any> {
     const request = this._createRequest('GetBalance', [address]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -64,7 +58,7 @@ export class ZilliqaService {
   public getSmartContracts(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContracts', [address]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -72,7 +66,7 @@ export class ZilliqaService {
   public getSmartContractInit(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContractInit', [address]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -80,7 +74,7 @@ export class ZilliqaService {
   public getSmartContractState(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContractState', [address]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
@@ -88,7 +82,7 @@ export class ZilliqaService {
   public getSmartContractCode(address: string): Observable<any> {
     const request = this._createRequest('GetSmartContractCode', [address]);
 
-    return this.$httpClient.post<JsonRpcResponse<any>>(this._apiUrl, request).pipe(
+    return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => result)
     );
   }
