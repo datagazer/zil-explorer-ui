@@ -29,15 +29,15 @@
 
   <dg-grid-cell column-span="3">
     <zil-tile>
-      <zil-tile-title>ZIL USD Price</zil-tile-title>
-      <zil-tile-content>{{ (marketInfo$ | async)?.price }}</zil-tile-content>
+      <zil-tile-title>Current DS Epoch</zil-tile-title>
+      <zil-tile-content>{{ (blockchainInfo$ | async)?.CurrentDSEpoch }}</zil-tile-content>
     </zil-tile>
   </dg-grid-cell>
 
   <dg-grid-cell column-span="3">
     <zil-tile>
-      <zil-tile-title>ZIL Total Outstanding</zil-tile-title>
-      <zil-tile-content>{{ (marketInfo$ | async)?.totalZilSupply }}</zil-tile-content>
+      <zil-tile-title>Current Mini Epoch</zil-tile-title>
+      <zil-tile-content>{{ (blockchainInfo$ | async)?.CurrentMiniEpoch }}</zil-tile-content>
     </zil-tile>
   </dg-grid-cell>
 

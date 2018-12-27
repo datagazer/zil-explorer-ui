@@ -41,7 +41,7 @@
             <th mat-header-cell *matHeaderCellDef>Reward</th>
 
             <td mat-cell *matCellDef="let txBlock">
-              {{ txBlock.reward | currency : 'ZIL' }}
+              {{ txBlock.reward | currency : 'ZIL' : true : '1.6-6' }}
             </td>
           </ng-container>
 

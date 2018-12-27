@@ -17,13 +17,13 @@ export class TxBlockService {
         timestamp: Math.floor(item.Timestamp / 1000),
         txCount: item.NumTxns,
         miner: this._getAddressFromPublicKey(item.MinerPubKey),
-        reward: Number(item.Rewards),
+        reward: Number(item.Rewards) * Math.pow(10, -12),
         dsBlockId: Number(item.DSBlockNum)
       })))
     );
   }
 
   private _getAddressFromPublicKey(publicKey: string): string {
-    return sha256().update(publicKey, 'hex').digest('hex').slice(24);
+    return sha256().update(publicKey.substring(2), 'hex').digest('hex').slice(24);
   }
 }

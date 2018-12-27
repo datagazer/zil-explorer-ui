@@ -17,13 +17,13 @@ export class TransactionService {
         timestamp: item.timestamp,
         addressFrom: this._getAddressFromPublicKey(item.senderPubKey),
         addressTo: item.toAddr,
-        gasPrice: item.gasPrice,
-        value: Number(item.amount)
+        gasPrice: item.gasPrice * Math.pow(10, -12),
+        value: Number(item.amount) * Math.pow(10, -12)
       })))
     );
   }
 
   private _getAddressFromPublicKey(publicKey: string): string {
-    return sha256().update(publicKey, 'hex').digest('hex').slice(24);
+    return sha256().update(publicKey.substring(2), 'hex').digest('hex').slice(24);
   }
 }

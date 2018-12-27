@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'zil-link',
+  selector: 'zil-link, [zil-link]',
   templateUrl: './link.component.html',
   styleUrls: ['./link.component.scss']
 })

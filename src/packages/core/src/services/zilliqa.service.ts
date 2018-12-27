@@ -92,6 +92,6 @@ export class ZilliqaService {
   }
 
   private _getAddressFromPublicKey(publicKey: string): string {
-    return sha256().update(publicKey, 'hex').digest('hex').slice(24);
+    return sha256().update(publicKey.substring(2), 'hex').digest('hex').slice(24);
   }
 }
