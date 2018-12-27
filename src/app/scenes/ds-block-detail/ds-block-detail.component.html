@@ -22,7 +22,7 @@
 
     <mat-form-field>
       <mat-label>Timestamp</mat-label>
-      <input matInput value="{{ dsBlock.header.Timestamp }}" readonly>
+      <input matInput value="{{ dsBlock.header.Timestamp / 1000 | date : 'short' : 'UTC' }}" readonly>
     </mat-form-field>
 
     <mat-form-field>

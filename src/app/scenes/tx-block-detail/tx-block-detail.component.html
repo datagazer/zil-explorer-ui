@@ -6,11 +6,6 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Transaction Hash</mat-label>
-      <input matInput value="{{ txBlock.header.TxnHash }}" readonly>
-    </mat-form-field>
-
-    <mat-form-field>
       <mat-label>DS Block #</mat-label>
       <input matInput value="{{ txBlock.header.DSBlockNum }}" readonly>
     </mat-form-field>
@@ -47,7 +42,7 @@
 
     <mat-form-field>
       <mat-label>Timestamp</mat-label>
-      <input matInput value="{{ txBlock.header.Timestamp }}" readonly>
+      <input matInput value="{{ txBlock.header.Timestamp / 1000 | date : 'short' : 'UTC' }}" readonly>
     </mat-form-field>
 
     <mat-form-field>
