@@ -101,7 +101,10 @@ RUN echo  '\n\
               expires 0; \n\
               try_files /index.html =404; \n\
           } \n\
-	location /v1/ { \n\
+ 	 location /zilliqa {\n\
+                proxy_pass https://api.zilliqa.com/;\n\
+	 }\n\
+	 location /v1/ { \n\
                 rewrite ^/v1/(.*)\$ /\$1 break; \n\
                 proxy_pass http://\$backend; \n\
                 proxy_set_header Host        \$host;  \n\
