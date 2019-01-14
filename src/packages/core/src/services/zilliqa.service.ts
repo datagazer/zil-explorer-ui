@@ -42,6 +42,7 @@ export class ZilliqaService {
     return this.$httpClient.post<JsonRpcResponse<any>>('/zilliqa', request).pipe(
       map(({ result }) => ({
         ...result,
+        gasPrice: Number(result.gasPrice) * Math.pow(10, -12),
         fromAddr: this._getAddressFromPublicKey(result.senderPubKey)
       }))
     );
