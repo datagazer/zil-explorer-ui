@@ -99,6 +99,14 @@
             </td>
           </ng-container>
 
+          <ng-container matColumnDef="dsDifficulty">
+            <th mat-header-cell *matHeaderCellDef>DS Difficulty</th>
+
+            <td mat-cell *matCellDef="let dsBlock">
+              {{ dsBlock.dsDifficulty | number }}
+            </td>
+          </ng-container>
+
           <thead>
             <tr mat-header-row *matHeaderRowDef="dsBlockColumns"></tr>
           </thead>

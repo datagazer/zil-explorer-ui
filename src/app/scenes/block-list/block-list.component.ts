@@ -35,7 +35,8 @@ export class BlockListComponent {
     'id',
     'timestamp',
     'miner',
-    'difficulty'
+    'difficulty',
+    'dsDifficulty'
   ];
 
   public constructor(
